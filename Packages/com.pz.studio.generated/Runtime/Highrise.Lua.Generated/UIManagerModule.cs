@@ -18,13 +18,15 @@ using Highrise.Lua;
 
 namespace Highrise.Lua.Generated
 {
-    [AddComponentMenu("Lua/Inventory_UI")]
-    [LuaRegisterType(0x9828273c8b3a75b2, typeof(LuaBehaviour))]
-    public class Inventory_UI : LuaBehaviourThunk
+    [AddComponentMenu("Lua/UIManagerModule")]
+    [LuaRegisterType(0xe3be2f8eee762c6, typeof(LuaBehaviour))]
+    public class UIManagerModule : LuaBehaviourThunk
     {
-        private const string s_scriptGUID = "803fe9b40a68c9748bb029e30e41ee21";
+        private const string s_scriptGUID = "b3e0ec2446d33a44ea97dfcd3e1321cb";
         public override string ScriptGUID => s_scriptGUID;
 
+        [LuaScriptPropertyAttribute("803fe9b40a68c9748bb029e30e41ee21")]
+        [SerializeField] public UnityEngine.Object m_inventoryUI = default;
 
         protected override SerializedPropertyValue[] SerializeProperties()
         {
@@ -33,10 +35,7 @@ namespace Highrise.Lua.Generated
 
             return new SerializedPropertyValue[]
             {
-                CreateSerializedProperty(_script.GetPropertyAt(0), null),
-                CreateSerializedProperty(_script.GetPropertyAt(1), null),
-                CreateSerializedProperty(_script.GetPropertyAt(2), null),
-                CreateSerializedProperty(_script.GetPropertyAt(3), null),
+                CreateSerializedProperty(_script.GetPropertyAt(0), m_inventoryUI),
             };
         }
     }

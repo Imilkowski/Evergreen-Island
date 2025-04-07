@@ -11,7 +11,7 @@
     <VisualElement class="center-panel-container">
       <VisualElement class="header">
         <hr:UILabel class="text-title" name="_Title"/>
-        <VisualElement class="close-button">
+        <VisualElement class="close-button" name="_CloseButton">
           <Image class="close-icon"/>
         </VisualElement>
       </VisualElement>

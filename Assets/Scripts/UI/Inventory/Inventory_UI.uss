@@ -8,11 +8,20 @@
     width: 100%;
 }
 
+:root {
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: rgb(232, 235, 237);
+
+    --primary-border-color:rgb(195, 207, 217);
+    --primary-border-width: 2px;
+    --primary-border-radius: 20px;
+}
+
 .center-panel-container{
-    background-color : rgb(232, 235, 237);
-    border-width: 2px;
-    border-color: rgb(195, 207, 217);
-    border-radius: 20px;
+    background-color: var(--secondary-color);
+    border-color: var(--primary-border-color);
+    border-width: var(--primary-border-width);
+    border-radius: var(--primary-border-radius);
 
     align-self: center;
 
@@ -65,10 +74,10 @@
 }
 
 .close-button{
-    background-color : rgb(255, 255, 255);
-    border-width: 2px;
-    border-color: rgb(195, 207, 217);
-    border-radius: 20px;
+    background-color: var(--primary-color);
+    border-color: var(--primary-border-color);
+    border-width: var(--primary-border-width);
+    border-radius: var(--primary-border-radius);
 
     align-items: center;
     justify-content: center;
@@ -97,10 +106,10 @@
 }
 
 .item-frame{
-    background-color : rgb(255, 255, 255);
-    border-width: 2px;
-    border-color: rgb(195, 207, 217);
-    border-radius: 20px;
+    background-color: var(--primary-color);
+    border-color: var(--primary-border-color);
+    border-width: var(--primary-border-width);
+    border-radius: var(--primary-border-radius);
 
     margin: 2px;
     flex-shrink: 0;
