@@ -17,7 +17,7 @@
       </VisualElement>
 
       <VisualElement class="content">
-        <VisualElement class="inventory-slots">
+        <VisualElement class="inventory-slots" name="_ItemsParent">
           <VisualElement class="item-frame"></VisualElement>
           <VisualElement class="item-frame"></VisualElement>
           <VisualElement class="item-frame"></VisualElement>

@@ -111,11 +111,19 @@
     border-width: var(--primary-border-width);
     border-radius: var(--primary-border-radius);
 
+    align-items: center;
+    justify-content: center;
+
     margin: 2px;
     flex-shrink: 0;
 
     height: 64px;
     width: 64px;
+}
+
+.item-icon{
+    height: 48px;
+    width: 48px;
 }
 
 .item-info{
@@ -126,4 +134,13 @@
     padding: 16px;
 
     width: 100%;
+}
+
+.item-count-label{
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+
+    color: white;
+    -unity-text-outline: 1px, black
 }

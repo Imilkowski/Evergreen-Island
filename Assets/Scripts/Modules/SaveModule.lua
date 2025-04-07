@@ -1,12 +1,20 @@
 --!Type(Module)
 
--- Server Side
+--!SerializeField
+local inventorySize : number = 0;
 
 local trackPlayer = Event.new("Track Player")
 
-local playerInventoryChange = Event.new("Player Inventory Change")
+--Inventory
+local getPlayerStorage = Event.new("Get Player Storage")
+local getPlayerStorageResponse = Event.new("Get Player Storage Response")
+
+local changeInventoryItem = Event.new("Change Inventory Item")
+local changeInventoryResponse = Event.new("Change Inventory Response")
 
 players_storage = {}
+
+-- [Server Side]
 
 function self:ServerAwake()
     --Track Player
@@ -15,6 +23,8 @@ function self:ServerAwake()
             player = player,
             inventory = {}
         }
+
+        print("Storage initiated")
     end)
 
     --Untrack Player
@@ -22,12 +32,17 @@ function self:ServerAwake()
         players_storage[player] = nil
     end)
 
+    --Track Player
+    getPlayerStorage:Connect(function(player: Player)
+        getPlayerStorageResponse:FireClient(player, players_storage[player])
+    end)
+
     --Player Inventory Change
-    playerInventoryChange:Connect(function(player: Player, add:boolean, itemName, amount)
+    changeInventoryItem:Connect(function(player: Player, add:boolean, itemName, amount)
         slotsOccupied = CountDictonaryItems(players_storage[player].inventory)
 
         if(players_storage[player].inventory[itemName] == nil) then
-            if(slotsOccupied >= 2) then return end
+            if(slotsOccupied >= inventorySize) then return end
 
             players_storage[player].inventory[itemName] = amount
         else
@@ -37,6 +52,8 @@ function self:ServerAwake()
 
             players_storage[player].inventory[itemName] += amount
         end
+
+        changeInventoryResponse:FireClient(player, players_storage[player].inventory)
     end)
 end
 
@@ -48,14 +65,33 @@ end
 
 
 
--- Client Side
+-- [Client Side]
 
 
 
 function self:ClientAwake()
     trackPlayer:FireServer(client.localPlayer)
+
+    --Get Player Storage Response
+    changeInventoryResponse:Connect(function(inventory)
+        players_storage[client.localPlayer].inventory = inventory;
+    end)
+
+    --Change Inventory Response
+    getPlayerStorageResponse:Connect(function(storage)
+        players_storage[client.localPlayer] = storage;
+        print("Player storage received")
+    end)
 end
 
-function PlayerInventoryChange(add, itemName, amount)
-    playerInventoryChange:FireServer(add, itemName, amount)
+function self:ClientStart()
+    getPlayerStorage:FireServer(client.localPlayer)
+end
+
+function ChangeInventoryItem(add, itemName, amount)
+    changeInventoryItem:FireServer(add, itemName, amount)
+end
+
+function GetInventorySize()
+    return inventorySize;
 end

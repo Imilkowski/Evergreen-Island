@@ -18,14 +18,13 @@ using Highrise.Lua;
 
 namespace Highrise.Lua.Generated
 {
-    [AddComponentMenu("Lua/SaveModule")]
-    [LuaRegisterType(0x8f5d59af62e39260, typeof(LuaBehaviour))]
-    public class SaveModule : LuaBehaviourThunk
+    [AddComponentMenu("Lua/HUD_UI")]
+    [LuaRegisterType(0x51f21165ee577559, typeof(LuaBehaviour))]
+    public class HUD_UI : LuaBehaviourThunk
     {
-        private const string s_scriptGUID = "f3d16a2d5617bee409c749ae3cc9d147";
+        private const string s_scriptGUID = "3f16941e7d562b545a4b7294e8fcd2ac";
         public override string ScriptGUID => s_scriptGUID;
 
-        [SerializeField] public System.Double m_inventorySize = 0;
 
         protected override SerializedPropertyValue[] SerializeProperties()
         {
@@ -34,7 +33,7 @@ namespace Highrise.Lua.Generated
 
             return new SerializedPropertyValue[]
             {
-                CreateSerializedProperty(_script.GetPropertyAt(0), m_inventorySize),
+                CreateSerializedProperty(_script.GetPropertyAt(0), null),
             };
         }
     }
