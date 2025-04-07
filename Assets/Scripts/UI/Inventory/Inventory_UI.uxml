@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xmlns:hr="Highrise.UI"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
+>
+
+  <hr:UILuaView class="inventory_-u-i">
+    <VisualElement class="center-panel-container">
+      <VisualElement class="header">
+        <hr:UILabel class="text-title" name="_Title"/>
+        <VisualElement class="close-button">
+          <Image class="close-icon"/>
+        </VisualElement>
+      </VisualElement>
+
+      <VisualElement class="content">
+        <VisualElement class="inventory-slots">
+          <VisualElement class="item-frame"></VisualElement>
+          <VisualElement class="item-frame"></VisualElement>
+          <VisualElement class="item-frame"></VisualElement>
+          <VisualElement class="item-frame"></VisualElement>
+          <VisualElement class="item-frame"></VisualElement>
+          <VisualElement class="item-frame"></VisualElement>
+          <VisualElement class="item-frame"></VisualElement>
+          <VisualElement class="item-frame"></VisualElement>
+          <VisualElement class="item-frame"></VisualElement>
+          <VisualElement class="item-frame"></VisualElement>
+        </VisualElement>
+
+        <VisualElement class="item-info">
+          <hr:UILabel class="text-header" name="_ItemName"/>
+          <hr:UILabel class="text-normal" name="_ItemLocations"/>
+        </VisualElement>
+      </VisualElement>
+    </VisualElement>
+  </hr:UILuaView>
+
+</UXML>

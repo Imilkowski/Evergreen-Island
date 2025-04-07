@@ -27,7 +27,7 @@ function self:ServerAwake()
         slotsOccupied = CountDictonaryItems(players_storage[player].inventory)
 
         if(players_storage[player].inventory[itemName] == nil) then
-            if(slotsOccupied >= 10) then return false end
+            if(slotsOccupied >= 2) then return end
 
             players_storage[player].inventory[itemName] = amount
         else

@@ -1,0 +1,120 @@
+.inventory_-u-i {
+    position: absolute;
+    justify-content: center;
+
+    padding: 8px;
+
+    height: 100%;
+    width: 100%;
+}
+
+.center-panel-container{
+    background-color : rgb(232, 235, 237);
+    border-width: 2px;
+    border-color: rgb(195, 207, 217);
+    border-radius: 20px;
+
+    align-self: center;
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+    width: 100%;
+}
+
+.header{
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    padding: 4px;
+
+    height: 48px;
+    width: 100%;
+}
+
+.content{
+    flex-direction: column;
+    
+    height: 100%;
+    width: 100%;
+}
+
+.text-title{
+    font-size: 20px;
+    color: rgb(64, 64, 64);
+    -unity-font-style: bold;
+
+    padding: 4px;
+}
+
+.text-header{
+    font-size: 16px;
+    color: rgb(64, 64, 64);
+    -unity-font-style: bold;
+
+    padding: 4px;
+}
+
+.text-normal{
+    font-size: 16px;
+    color: rgb(64, 64, 64);
+
+    padding: 4px;
+}
+
+.close-button{
+    background-color : rgb(255, 255, 255);
+    border-width: 2px;
+    border-color: rgb(195, 207, 217);
+    border-radius: 20px;
+
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+
+    right: 8px;
+
+    height: 36px;
+    width: 36px;
+}
+
+.close-icon{
+    background-image: url("project://database/Assets/Art/Icons/X.png");
+
+    height: 16px;
+    width: 16px;
+}
+
+.inventory-slots{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 4px;
+}
+
+.item-frame{
+    background-color : rgb(255, 255, 255);
+    border-width: 2px;
+    border-color: rgb(195, 207, 217);
+    border-radius: 20px;
+
+    margin: 2px;
+    flex-shrink: 0;
+
+    height: 64px;
+    width: 64px;
+}
+
+.item-info{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 16px;
+
+    width: 100%;
+}
