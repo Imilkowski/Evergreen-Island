@@ -4,7 +4,7 @@
 
 local trackPlayer = Event.new("Track Player")
 
-local increasePlayerScore = Event.new("Increase Player Score")
+local playerInventoryChange = Event.new("Player Inventory Change")
 
 players_storage = {}
 
@@ -13,7 +13,7 @@ function self:ServerAwake()
     trackPlayer:Connect(function(player: Player)
         players_storage[player] = {
             player = player,
-            score = 0,
+            inventory = {}
         }
     end)
 
@@ -22,20 +22,40 @@ function self:ServerAwake()
         players_storage[player] = nil
     end)
 
-    --Increase Player Score
-    increasePlayerScore:Connect(function(player: Player, scoreChange)
-        players_storage[player].score += scoreChange
+    --Player Inventory Change
+    playerInventoryChange:Connect(function(player: Player, add:boolean, itemName, amount)
+        slotsOccupied = CountDictonaryItems(players_storage[player].inventory)
 
-        print(player.name .. " new score: " .. players_storage[player].score)
+        if(players_storage[player].inventory[itemName] == nil) then
+            if(slotsOccupied >= 10) then return false end
+
+            players_storage[player].inventory[itemName] = amount
+        else
+            if(not add) then
+                amount *= -1
+            end
+
+            players_storage[player].inventory[itemName] += amount
+        end
     end)
 end
 
+function CountDictonaryItems(t)
+    local c = 0
+    for _ in pairs(t) do c = c + 1 end
+    return c
+end
+
+
+
 -- Client Side
+
+
 
 function self:ClientAwake()
     trackPlayer:FireServer(client.localPlayer)
 end
 
-function IncreaseScore(scoreChange)
-    increasePlayerScore:FireServer(scoreChange)
+function PlayerInventoryChange(add, itemName, amount)
+    playerInventoryChange:FireServer(add, itemName, amount)
 end
