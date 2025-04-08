@@ -23,8 +23,8 @@ function self:ServerAwake()
             player = player,
             inventory = {},
             tools = {
-                axe = 1,
-                pickaxe = 1,
+                Axe = 1,
+                Pickaxe = 1,
             }
         }
 

@@ -18,14 +18,17 @@ using Highrise.Lua;
 
 namespace Highrise.Lua.Generated
 {
-    [AddComponentMenu("Lua/Resource")]
-    [LuaRegisterType(0x1b8a4eb89ad0575b, typeof(LuaBehaviour))]
-    public class Resource : LuaBehaviourThunk
+    [CreateAssetMenu(menuName = "Highrise/ScriptableObjects/Resource")]
+    [LuaRegisterType(0xce39ae3e3f3d3915, typeof(LuaScriptableObject))]
+    public class Resource : LuaScriptableObjectThunk
     {
-        private const string s_scriptGUID = "b14da0b04d1e59a428097ff6389cef7b";
+        private const string s_scriptGUID = "f991541301db6dd47b91752d96328df4";
         public override string ScriptGUID => s_scriptGUID;
 
-        [SerializeField] public System.String m_itemName = "";
+        [SerializeField] public System.String m_tool = "";
+        [SerializeField] public System.Double m_toolLevel = 0;
+        [LuaScriptPropertyAttribute("a2502b0c324894043a57c8e47cac0014")]
+        [SerializeField] public System.Collections.Generic.List<UnityEngine.Object> m_items = default;
 
         protected override SerializedPropertyValue[] SerializeProperties()
         {
@@ -34,7 +37,9 @@ namespace Highrise.Lua.Generated
 
             return new SerializedPropertyValue[]
             {
-                CreateSerializedProperty(_script.GetPropertyAt(0), m_itemName),
+                CreateSerializedProperty(_script.GetPropertyAt(0), m_tool),
+                CreateSerializedProperty(_script.GetPropertyAt(1), m_toolLevel),
+                CreateSerializedProperty(_script.GetPropertyAt(2), m_items),
             };
         }
     }

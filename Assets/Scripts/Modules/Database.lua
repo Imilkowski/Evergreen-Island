@@ -26,9 +26,9 @@ function self:Awake()
     }
 
     tools = {
-        {name = "axe", icon = toolIcons[1]},
-        {name = "pickaxe", icon = toolIcons[2]},
-        {name = "shovel", icon = toolIcons[3]},
+        {name = "Axe", icon = toolIcons[1]},
+        {name = "Pickaxe", icon = toolIcons[2]},
+        {name = "Shovel", icon = toolIcons[3]},
     }
 end
 

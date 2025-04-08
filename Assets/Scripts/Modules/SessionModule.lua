@@ -1,6 +1,6 @@
 --!Type(Module)
 
-local currentTool = "axe"
+local currentTool = "None"
 
 function GetCurrentTool()
     return currentTool
