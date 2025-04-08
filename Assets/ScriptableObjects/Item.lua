@@ -5,6 +5,8 @@ local itemName : string = ""
 --!SerializeField
 local itemIcon : Texture = nil
 --!SerializeField
+local itemType : string = ""
+--!SerializeField
 local seasons : { boolean } = {}
 --!SerializeField
 local locations : { boolean } = {}

@@ -27,6 +27,7 @@ namespace Highrise.Lua.Generated
 
         [SerializeField] public System.String m_itemName = "";
         [SerializeField] public UnityEngine.Texture m_itemIcon = default;
+        [SerializeField] public System.String m_itemType = "";
         [SerializeField] public System.Collections.Generic.List<System.Boolean> m_seasons = default;
         [SerializeField] public System.Collections.Generic.List<System.Boolean> m_locations = default;
 
@@ -39,8 +40,9 @@ namespace Highrise.Lua.Generated
             {
                 CreateSerializedProperty(_script.GetPropertyAt(0), m_itemName),
                 CreateSerializedProperty(_script.GetPropertyAt(1), m_itemIcon),
-                CreateSerializedProperty(_script.GetPropertyAt(2), m_seasons),
-                CreateSerializedProperty(_script.GetPropertyAt(3), m_locations),
+                CreateSerializedProperty(_script.GetPropertyAt(2), m_itemType),
+                CreateSerializedProperty(_script.GetPropertyAt(3), m_seasons),
+                CreateSerializedProperty(_script.GetPropertyAt(4), m_locations),
             };
         }
     }
