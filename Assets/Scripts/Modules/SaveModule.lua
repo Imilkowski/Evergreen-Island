@@ -25,6 +25,7 @@ function self:ServerAwake()
             tools = {
                 Axe = 1,
                 Pickaxe = 1,
+                Shovel = 1
             }
         }
 

@@ -6,6 +6,9 @@ local SessionModule = require("SessionModule")
 --!SerializeField
 local resources : { Resource } = {}
 
+--!SerializeField
+local itemParticle: GameObject = nil
+
 function GetCurrentTool()
     tool = SessionModule.GetCurrentTool()
     toolsOwned = SaveModule.GetTools()
@@ -67,6 +70,11 @@ function FindMatchingResources(tool, toolLevel)
     end
 end
 
+function SpawnItemParticle(icon)
+    local particle = Object.Instantiate(itemParticle).gameObject
+    particle:GetComponent(ItemParticle).SetUp(self.transform.position, icon)
+end
+
 -- Connect to the Tapped event
 self.gameObject:GetComponent(TapHandler).Tapped:Connect(function()
     tool, toolLevel = GetCurrentTool()
@@ -82,6 +90,8 @@ self.gameObject:GetComponent(TapHandler).Tapped:Connect(function()
     for i, item in ipairs(items) do
         if(item.GetSeasons()[seasonId]) then
             SaveModule.ChangeInventoryItem(true, item.GetName(), itemsCount[i])
+
+            SpawnItemParticle(item.GetIcon())
         end
     end
 end)
