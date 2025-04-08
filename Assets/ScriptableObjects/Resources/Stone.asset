@@ -19,6 +19,8 @@ MonoBehaviour:
   m_toolLevel: 0
   m_items:
   - {fileID: 11400000, guid: b7648a58503997c498972cbd175b9440, type: 2}
+  m_itemsCount:
+  - 1
   references:
     version: 2
     RefIds: []

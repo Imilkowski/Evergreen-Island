@@ -6,6 +6,8 @@ local tool : string = ""
 local toolLevel : number = 0
 --!SerializeField
 local items : { Item } = nil
+--!SerializeField
+local itemsCount : { number } = nil
 
 function GetTool()
     return tool
@@ -16,5 +18,5 @@ function GetToolLevel()
 end
 
 function GetItems()
-    return items
+    return items, itemsCount
 end

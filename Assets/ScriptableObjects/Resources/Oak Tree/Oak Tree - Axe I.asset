@@ -21,6 +21,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c52e05786aa3eca4e821b3b67f14007b, type: 2}
   - {fileID: 11400000, guid: dfd4879ed40b5d94ca2b5b447a21364d, type: 2}
   - {fileID: 11400000, guid: 10ef3e4209c946345ab17e075762a009, type: 2}
+  m_itemsCount:
+  - 1
+  - 1
+  - 2
   references:
     version: 2
     RefIds: []

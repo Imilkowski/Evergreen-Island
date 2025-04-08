@@ -2270,6 +2270,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c52e05786aa3eca4e821b3b67f14007b, type: 2}
   - {fileID: 11400000, guid: ccda31d039e6a8f428d09852ef3c6d4a, type: 2}
   - {fileID: 11400000, guid: b7648a58503997c498972cbd175b9440, type: 2}
+  - {fileID: 11400000, guid: 10ef3e4209c946345ab17e075762a009, type: 2}
+  - {fileID: 11400000, guid: dfd4879ed40b5d94ca2b5b447a21364d, type: 2}
+  - {fileID: 11400000, guid: 0db6dd7e369cb8e4584c890c659d8e09, type: 2}
   m_toolIcons:
   - {fileID: 2800000, guid: 2e8a7f8fd5dccba41a9c5bb2c04c3f86, type: 3}
   - {fileID: 2800000, guid: 1e7aa997cfe306945ae50f48bec7698d, type: 3}

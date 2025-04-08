@@ -22,45 +22,46 @@ end
 
 function FindMatchingResources(tool, toolLevel)
     items = {}
+    itemsCount = {}
     itemsFound = false
     
     for i, v in ipairs(resources) do
         if(v.GetTool() == tool) then
             if(v.GetToolLevel() == toolLevel) then
-                items = v.GetItems()
+                items, itemsCount = v.GetItems()
                 itemsFound = true
             end
         end
     end
 
     if(itemsFound) then
-        return items
+        return items, itemsCount
     end
 
     --if not found, check if a tool with lower level is needed
     for i, v in ipairs(resources) do
         if(v.GetTool() == tool) then
             if(v.GetToolLevel() < toolLevel) then
-                items = v.GetItems()
+                items, itemsCount = v.GetItems()
                 itemsFound = true
             end
         end
     end
 
     if(itemsFound) then
-        return items
+        return items, itemsCount
     end
 
     --if not found, check if no tool is needed
     for i, v in ipairs(resources) do
         if(v.GetTool() == "") then
-            items = v.GetItems()
+            items, itemsCount = v.GetItems()
             itemsFound = true
         end
     end
 
     if(itemsFound) then
-        return items
+        return items, itemsCount
     else
         return nil
     end
@@ -69,13 +70,18 @@ end
 -- Connect to the Tapped event
 self.gameObject:GetComponent(TapHandler).Tapped:Connect(function()
     tool, toolLevel = GetCurrentTool()
-    items = FindMatchingResources(tool, toolLevel)
+    items, itemsCount = FindMatchingResources(tool, toolLevel)
 
     if(items == nil) then
-        print("Can't get resources with the current tool")
-    else
-        print("Got items with " .. tool)
+        --print("Can't get resources with the current tool")
+        return
     end
+
+    seasonId = SessionModule.GetCurrentSeasonId()
     
-    --SaveModule.ChangeInventoryItem(true, itemName, 1)
+    for i, item in ipairs(items) do
+        if(item.GetSeasons()[seasonId]) then
+            SaveModule.ChangeInventoryItem(true, item.GetName(), itemsCount[i])
+        end
+    end
 end)
