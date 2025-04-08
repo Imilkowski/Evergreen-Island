@@ -143,7 +143,8 @@
     right: 2px;
     bottom: 2px;
 
-    color: var(--primary-text-color);
+    color: white;
+    -unity-text-outline: 1px, black;
 }
 
 .seasons{

@@ -21,7 +21,11 @@ function self:ServerAwake()
     trackPlayer:Connect(function(player: Player)
         players_storage[player] = {
             player = player,
-            inventory = {}
+            inventory = {},
+            tools = {
+                axe = 1,
+                pickaxe = 1
+            }
         }
 
         print("Storage initiated")

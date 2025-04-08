@@ -16,7 +16,7 @@ MonoBehaviour:
   _networkId: 2580175477
   _properties: []
   m_itemName: Acorn
-  m_itemIcon: {fileID: 2800000, guid: 0b20c082043af4ef3b25a10d21c7fa54, type: 3}
+  m_itemIcon: {fileID: 2800000, guid: 4de64b67927d44c72bb7d3693ab66ec7, type: 3}
   m_seasons: 00000101
   m_locations: 0100
   references:
