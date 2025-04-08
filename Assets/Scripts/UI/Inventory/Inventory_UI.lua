@@ -16,6 +16,8 @@ local _CloseButton: VisualElement = nil
 
 --!Bind
 local _ItemsParent: VisualElement = nil
+--!Bind
+local _ItemSeasons: VisualElement = nil
 
 function self:Awake()
     SetTexts()
@@ -83,11 +85,23 @@ function SetItemDetails(item:Item)
     end
 
     _ItemLocations:SetPrelocalizedText(locationsText);
+
+    _ItemSeasons:Clear()
+
+    for i, v in ipairs(item.GetSeasons()) do
+        if(v) then
+            local _seasonIcon = Image.new();
+            _seasonIcon:AddToClassList("season-icon")
+            _seasonIcon.image = Database.GetSeason(i).icon
+            _ItemSeasons:Add(_seasonIcon)
+        end
+    end
 end
 
 function ClearItemDetails()
     _ItemName:SetPrelocalizedText("");
     _ItemLocations:SetPrelocalizedText("");
+    _ItemSeasons:Clear()
 end
 
 -- Register a callback for when the button is pressed

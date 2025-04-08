@@ -26,7 +26,8 @@ namespace Highrise.Lua.Generated
         public override string ScriptGUID => s_scriptGUID;
 
         [SerializeField] public System.Collections.Generic.List<System.String> m_locations = default;
-        [SerializeField] public System.Collections.Generic.List<System.String> m_seasons = default;
+        [SerializeField] public System.Collections.Generic.List<UnityEngine.Texture> m_seasonIcons = default;
+        [SerializeField] public System.Collections.Generic.List<UnityEngine.Color> m_seasonColors = default;
         [LuaScriptPropertyAttribute("a2502b0c324894043a57c8e47cac0014")]
         [SerializeField] public System.Collections.Generic.List<UnityEngine.Object> m_items = default;
 
@@ -38,8 +39,9 @@ namespace Highrise.Lua.Generated
             return new SerializedPropertyValue[]
             {
                 CreateSerializedProperty(_script.GetPropertyAt(0), m_locations),
-                CreateSerializedProperty(_script.GetPropertyAt(1), m_seasons),
-                CreateSerializedProperty(_script.GetPropertyAt(2), m_items),
+                CreateSerializedProperty(_script.GetPropertyAt(1), m_seasonIcons),
+                CreateSerializedProperty(_script.GetPropertyAt(2), m_seasonColors),
+                CreateSerializedProperty(_script.GetPropertyAt(3), m_items),
             };
         }
     }

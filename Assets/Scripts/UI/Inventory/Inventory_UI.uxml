@@ -17,23 +17,16 @@
       </VisualElement>
 
       <VisualElement class="content">
-        <VisualElement class="inventory-slots" name="_ItemsParent">
-          <VisualElement class="item-frame"></VisualElement>
-          <VisualElement class="item-frame"></VisualElement>
-          <VisualElement class="item-frame"></VisualElement>
-          <VisualElement class="item-frame"></VisualElement>
-          <VisualElement class="item-frame"></VisualElement>
-          <VisualElement class="item-frame"></VisualElement>
-          <VisualElement class="item-frame"></VisualElement>
-          <VisualElement class="item-frame"></VisualElement>
-          <VisualElement class="item-frame"></VisualElement>
-          <VisualElement class="item-frame"></VisualElement>
-        </VisualElement>
+      
+        <VisualElement class="inventory-slots" name="_ItemsParent"></VisualElement>
 
         <VisualElement class="item-info">
           <hr:UILabel class="text-header" name="_ItemName"/>
           <hr:UILabel class="text-normal" name="_ItemLocations"/>
+
+          <VisualElement class="seasons" name="_ItemSeasons"></VisualElement>
         </VisualElement>
+
       </VisualElement>
     </VisualElement>
   </hr:UILuaView>

@@ -15,6 +15,8 @@
     --primary-border-color:rgb(195, 207, 217);
     --primary-border-width: 2px;
     --primary-border-radius: 20px;
+
+    --primary-text-color: rgb(64, 64, 64);
 }
 
 .center-panel-container{
@@ -52,7 +54,7 @@
 
 .text-title{
     font-size: 20px;
-    color: rgb(64, 64, 64);
+    color: var(--primary-text-color);
     -unity-font-style: bold;
 
     padding: 4px;
@@ -60,7 +62,7 @@
 
 .text-header{
     font-size: 16px;
-    color: rgb(64, 64, 64);
+    color: var(--primary-text-color);
     -unity-font-style: bold;
 
     padding: 4px;
@@ -68,7 +70,7 @@
 
 .text-normal{
     font-size: 16px;
-    color: rgb(64, 64, 64);
+    color: var(--primary-text-color);
 
     padding: 4px;
 }
@@ -141,6 +143,20 @@
     right: 2px;
     bottom: 2px;
 
-    color: white;
-    -unity-text-outline: 1px, black
+    color: var(--primary-text-color);
+}
+
+.seasons{
+    flex-direction: row;
+}
+
+.season-icon{
+    background-color : var(--primary-text-color);
+    border-radius: var(--primary-border-radius);
+
+    padding: 6px;
+    margin: 4px;
+
+    height: 32px;
+    width: 32px;
 }
