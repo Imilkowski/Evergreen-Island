@@ -24,7 +24,7 @@ function self:ServerAwake()
             inventory = {},
             tools = {
                 axe = 1,
-                pickaxe = 1
+                pickaxe = 1,
             }
         }
 
@@ -98,4 +98,8 @@ end
 
 function GetInventorySize()
     return inventorySize;
+end
+
+function GetTools()
+    return players_storage[client.localPlayer].tools;
 end

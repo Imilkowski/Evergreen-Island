@@ -13,12 +13,22 @@ local seasons = {}
 --!SerializeField
 local items : { Item } = {}
 
+--!SerializeField
+local toolIcons : { Texture } = {}
+local tools = {}
+
 function self:Awake()
     seasons = {
         {name = "Spring", icon = seasonIcons[1], color = seasonColors[1]},
         {name = "Summer", icon = seasonIcons[2], color = seasonColors[2]},
         {name = "Autumn", icon = seasonIcons[3], color = seasonColors[3]},
         {name = "Winter", icon = seasonIcons[4], color = seasonColors[4]}
+    }
+
+    tools = {
+        {name = "axe", icon = toolIcons[1]},
+        {name = "pickaxe", icon = toolIcons[2]},
+        {name = "shovel", icon = toolIcons[3]},
     }
 end
 
@@ -36,4 +46,16 @@ end
 
 function GetSeason(id)
     return seasons[id]
+end
+
+function GetToolIcon(name)
+    for i, v in ipairs(tools) do
+        if(v.name  == name) then 
+            return v.icon
+        end
+    end
+end
+
+function GetTools()
+    return tools
 end
