@@ -17,7 +17,7 @@ end
 
 function ResourceGathered(resource : ResourceOrigin, uniqueID, gatheredTime)
     gatheredResources[uniqueID] = {resource, gatheredTime}
-    print("Resource gathered", resource.name)
+    --print("Resource gathered", resource.name)
 end
 
 function CheckGatheredResources()

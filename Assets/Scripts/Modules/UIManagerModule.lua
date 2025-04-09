@@ -11,6 +11,7 @@ local objectInfoUI : ObjectInfo_UI = nil
 
 function self:ClientStart()
     ShowInventory(false)
+    objectInfoUI.gameObject:SetActive(false)
 end
 
 function ShowInventory(show:boolean)

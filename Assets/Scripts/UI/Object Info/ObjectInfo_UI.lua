@@ -39,7 +39,7 @@ function SetObjectInfo(name, time, total)
     totalTime = total
 
     UpdateObjectInfo()
-    updateTimer = Timer.Every(1, function()
+    updateTimer = Timer.Every(0.5, function()
         UpdateObjectInfo()
     end)
 end
@@ -49,7 +49,8 @@ function UpdateObjectInfo()
     local secondsPassed = now - startTime
     progress = secondsPassed / totalTime
 
-    if(progress >= 1) then
+    characterState = client.localPlayer.character.state
+    if(progress >= 1 or characterState == 5) then
         if (updateTimer) then
             updateTimer:Stop()
             updateTimer = nil

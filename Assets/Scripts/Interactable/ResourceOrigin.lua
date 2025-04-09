@@ -147,6 +147,7 @@ self.gameObject:GetComponent(TapHandler).Tapped:Connect(function()
             SaveModule.ChangeInventoryItem(true, item.GetName(), itemsCount[i])
 
             SpawnItemParticle(item.GetIcon())
+            client.localPlayer.character:PlayEmote("mining-success", false)
 
             Collected()
         end
