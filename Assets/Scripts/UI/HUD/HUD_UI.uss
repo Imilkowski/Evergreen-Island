@@ -53,6 +53,8 @@
 
 .season-container{
     width: 100%;
+    
+    margin-bottom: 4px;
 }
 
 .season-name{
@@ -74,10 +76,12 @@
 
     width: 100px;
     height: 12px;
+
+    flex-shrink: 0;
 }
 
 .progress-foreground{
-    background-color: rgb(255, 187, 0);
+    background-color: rgb(255, 199, 49);
     border-radius: 4px;
 
     height: 100%;

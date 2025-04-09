@@ -12,10 +12,10 @@
       <Image class="hud-button" name="_Inventory_Button"/>
     </VisualElement>
 
-    <VisualElement class="top-container">
+    <VisualElement class="top-container" picking-mode="Ignore">
 
       <VisualElement class="season-container season-name">
-        <hr:UILabel class="text-normal" name="_SeasonName"/>
+        <hr:UILabel class="text-header" name="_SeasonName"/>
         <Image class="season-icon" name="_SeasonIcon"/>
       </VisualElement>
 

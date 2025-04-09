@@ -26,10 +26,10 @@ namespace Highrise.Lua.Generated
         public override string ScriptGUID => s_scriptGUID;
 
         [SerializeField] public System.Double m_uniqueID = 0;
+        [SerializeField] public System.String m_objectName = "";
         [LuaScriptPropertyAttribute("f991541301db6dd47b91752d96328df4")]
         [SerializeField] public System.Collections.Generic.List<UnityEngine.Object> m_resources = default;
         [SerializeField] public System.Double m_renewTime = 0;
-        [SerializeField] public UnityEngine.GameObject m_resourceModel = default;
         [SerializeField] public UnityEngine.GameObject m_itemParticle = default;
 
         protected override SerializedPropertyValue[] SerializeProperties()
@@ -40,9 +40,9 @@ namespace Highrise.Lua.Generated
             return new SerializedPropertyValue[]
             {
                 CreateSerializedProperty(_script.GetPropertyAt(0), m_uniqueID),
-                CreateSerializedProperty(_script.GetPropertyAt(1), m_resources),
-                CreateSerializedProperty(_script.GetPropertyAt(2), m_renewTime),
-                CreateSerializedProperty(_script.GetPropertyAt(3), m_resourceModel),
+                CreateSerializedProperty(_script.GetPropertyAt(1), m_objectName),
+                CreateSerializedProperty(_script.GetPropertyAt(2), m_resources),
+                CreateSerializedProperty(_script.GetPropertyAt(3), m_renewTime),
                 CreateSerializedProperty(_script.GetPropertyAt(4), m_itemParticle),
             };
         }

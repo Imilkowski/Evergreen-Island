@@ -6,6 +6,8 @@ local SaveModule = require("SaveModule")
 local hudUI : HUD_UI = nil
 --!SerializeField
 local inventoryUI : Inventory_UI = nil
+--!SerializeField
+local objectInfoUI : ObjectInfo_UI = nil
 
 function self:ClientStart()
     ShowInventory(false)
@@ -21,4 +23,9 @@ end
 
 function UpdateHUD_Season(season, seasonProgress)
     hudUI.UpdateSeasonInfo(season, seasonProgress)
+end
+
+function SetObjectInfo(objectName, startTime, totalTime)
+    objectInfoUI.gameObject:SetActive(true)
+    objectInfoUI.SetObjectInfo(objectName, startTime, totalTime)
 end

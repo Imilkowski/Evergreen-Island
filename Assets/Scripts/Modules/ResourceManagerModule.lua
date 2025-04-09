@@ -10,7 +10,7 @@ function self:ClientStart()
         resource.MarkAsTracked()
     end
 
-    Timer.Every(1, function()
+    Timer.Every(0.5, function()
         CheckGatheredResources()
     end)
 end

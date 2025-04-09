@@ -3,21 +3,32 @@
 local SaveModule = require("SaveModule")
 local SessionModule = require("SessionModule")
 local ResourceManagerModule = require("ResourceManagerModule")
+local UIManagerModule = require("UIManagerModule")
 
 --!SerializeField
 local uniqueID : number = 0
 
 --!SerializeField
+local objectName : string = ""
+
+--!SerializeField
 local resources : { Resource } = {}
 --!SerializeField
 local renewTime : number = 0
---!SerializeField
-local resourceModel : GameObject = nil
 
 --!SerializeField
 local itemParticle: GameObject = nil
 
+local resourceModel : GameObject = nil
+local emptyMark : GameObject = nil
+
+local gatheredTime = nil
 local tracked = false
+
+function self:Awake()
+    resourceModel = self.transform:GetChild(0).gameObject
+    emptyMark = self.transform:GetChild(1).gameObject
+end
 
 function self:Start()
     Timer.After(1, function()
@@ -99,21 +110,27 @@ end
 
 function Collected()
     resourceModel:SetActive(false)
+    emptyMark:SetActive(true)
+
     gatheredTime = os.time(os.date("*t"))
     ResourceManagerModule.ResourceGathered(self, uniqueID, gatheredTime)
 end
 
 function GetRenewTime()
-    return renewTime
+    return renewTime * 60
 end
 
 function Renew()
     resourceModel:SetActive(true)
+    emptyMark:SetActive(false)
 end
 
 -- Connect to the Tapped event
 self.gameObject:GetComponent(TapHandler).Tapped:Connect(function()
-    if(not resourceModel.activeSelf) then return end
+    if(not resourceModel.activeSelf) then 
+        UIManagerModule.SetObjectInfo(objectName, gatheredTime, GetRenewTime())
+        return 
+    end
 
     tool, toolLevel = GetCurrentTool()
     items, itemsCount = FindMatchingResources(tool, toolLevel)
