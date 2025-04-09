@@ -19,10 +19,10 @@ local tools = {}
 
 function self:Awake()
     seasons = {
-        {name = "Spring", icon = seasonIcons[1], color = seasonColors[1]},
-        {name = "Summer", icon = seasonIcons[2], color = seasonColors[2]},
-        {name = "Autumn", icon = seasonIcons[3], color = seasonColors[3]},
-        {name = "Winter", icon = seasonIcons[4], color = seasonColors[4]}
+        {id = 1, name = "Spring", icon = seasonIcons[1], color = seasonColors[1]},
+        {id = 2, name = "Summer", icon = seasonIcons[2], color = seasonColors[2]},
+        {id = 3, name = "Autumn", icon = seasonIcons[3], color = seasonColors[3]},
+        {id = 4, name = "Winter", icon = seasonIcons[4], color = seasonColors[4]}
     }
 
     tools = {

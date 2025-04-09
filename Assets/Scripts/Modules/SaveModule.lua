@@ -28,8 +28,6 @@ function self:ServerAwake()
                 Shovel = 1
             }
         }
-
-        print("Storage initiated")
     end)
 
     --Untrack Player

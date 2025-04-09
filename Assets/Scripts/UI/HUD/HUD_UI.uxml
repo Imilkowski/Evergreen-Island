@@ -11,6 +11,21 @@
     <VisualElement class="left-container">
       <Image class="hud-button" name="_Inventory_Button"/>
     </VisualElement>
+
+    <VisualElement class="top-container">
+
+      <VisualElement class="season-container season-name">
+        <hr:UILabel class="text-normal" name="_SeasonName"/>
+        <Image class="season-icon" name="_SeasonIcon"/>
+      </VisualElement>
+
+      <VisualElement class="season-container">
+        <VisualElement class="progress-background">
+          <VisualElement class="progress-foreground" name="_SeasonProgress"></VisualElement>
+        </VisualElement>
+      </VisualElement>
+
+    </VisualElement>
   </hr:UILuaView>
 
 </UXML>

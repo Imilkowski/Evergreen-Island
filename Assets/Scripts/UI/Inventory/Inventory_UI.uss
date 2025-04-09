@@ -149,15 +149,17 @@
 
 .seasons{
     flex-direction: row;
+
+    margin: 4px;
+    padding: 4px;
+
+    background-color : var(--primary-text-color);
+    border-radius: var(--primary-border-radius);
 }
 
 .season-icon{
-    background-color : var(--primary-text-color);
-    border-radius: var(--primary-border-radius);
-
-    padding: 6px;
     margin: 4px;
 
-    height: 32px;
-    width: 32px;
+    height: 24px;
+    width: 24px;
 }

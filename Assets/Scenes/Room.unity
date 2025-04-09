@@ -2096,6 +2096,7 @@ MonoBehaviour:
   _uiOutput: 0
   _uiOutputSettings:
     rid: -2
+  m_hudUI: {fileID: 2052380664}
   m_inventoryUI: {fileID: 642745417}
   references:
     version: 2
@@ -2294,10 +2295,10 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 2d04a460234459043949b1a4452038c5, type: 3}
   - {fileID: 2800000, guid: 305d0936c9e75f94097166b41af498f4, type: 3}
   m_seasonColors:
-  - {r: 0.6666667, g: 1, b: 0.19215687, a: 0}
-  - {r: 1, g: 0.78039217, b: 0.19215687, a: 0}
-  - {r: 1, g: 0.45882353, b: 0.19215687, a: 9.28e-43}
-  - {r: 0.19215687, g: 0.81960785, b: 1, a: 0}
+  - {r: 0.6666667, g: 1, b: 0.19215687, a: 1}
+  - {r: 1, g: 0.78039217, b: 0.19215687, a: 1}
+  - {r: 1, g: 0.45882353, b: 0.19215687, a: 1}
+  - {r: 0.19215687, g: 0.81960785, b: 1, a: 1}
   m_items:
   - {fileID: 11400000, guid: c52e05786aa3eca4e821b3b67f14007b, type: 2}
   - {fileID: 11400000, guid: ccda31d039e6a8f428d09852ef3c6d4a, type: 2}

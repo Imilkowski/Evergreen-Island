@@ -3,6 +3,8 @@
 local SaveModule = require("SaveModule")
 
 --!SerializeField
+local hudUI : HUD_UI = nil
+--!SerializeField
 local inventoryUI : Inventory_UI = nil
 
 function self:Start()
@@ -15,4 +17,8 @@ function ShowInventory(show:boolean)
     if(show) then
         inventoryUI.UpdateItemsList(SaveModule.players_storage[client.localPlayer].inventory)
     end
+end
+
+function UpdateHUD_Season(season, seasonProgress)
+    hudUI.UpdateSeasonInfo(season, seasonProgress)
 end
