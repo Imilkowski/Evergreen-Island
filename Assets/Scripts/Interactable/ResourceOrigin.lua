@@ -2,12 +2,34 @@
 
 local SaveModule = require("SaveModule")
 local SessionModule = require("SessionModule")
+local ResourceManagerModule = require("ResourceManagerModule")
+
+--!SerializeField
+local uniqueID : number = 0
 
 --!SerializeField
 local resources : { Resource } = {}
+--!SerializeField
+local renewTime : number = 0
+--!SerializeField
+local resourceModel : GameObject = nil
 
 --!SerializeField
 local itemParticle: GameObject = nil
+
+local tracked = false
+
+function self:Start()
+    Timer.After(1, function()
+        if(not tracked) then
+            print(self.gameObject.name .. " is not being tracked!")
+        end
+    end)
+end
+
+function MarkAsTracked()
+    tracked = true
+end
 
 function GetCurrentTool()
     tool = SessionModule.GetCurrentTool()
@@ -75,8 +97,24 @@ function SpawnItemParticle(icon)
     particle:GetComponent(ItemParticle).SetUp(self.transform.position, icon)
 end
 
+function Collected()
+    resourceModel:SetActive(false)
+    gatheredTime = os.time(os.date("*t"))
+    ResourceManagerModule.ResourceGathered(self, uniqueID, gatheredTime)
+end
+
+function GetRenewTime()
+    return renewTime
+end
+
+function Renew()
+    resourceModel:SetActive(true)
+end
+
 -- Connect to the Tapped event
 self.gameObject:GetComponent(TapHandler).Tapped:Connect(function()
+    if(not resourceModel.activeSelf) then return end
+
     tool, toolLevel = GetCurrentTool()
     items, itemsCount = FindMatchingResources(tool, toolLevel)
 
@@ -92,6 +130,8 @@ self.gameObject:GetComponent(TapHandler).Tapped:Connect(function()
             SaveModule.ChangeInventoryItem(true, item.GetName(), itemsCount[i])
 
             SpawnItemParticle(item.GetIcon())
+
+            Collected()
         end
     end
 end)

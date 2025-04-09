@@ -17,7 +17,7 @@ local items : { Item } = {}
 local toolIcons : { Texture } = {}
 local tools = {}
 
-function self:Awake()
+function self:ClientAwake()
     seasons = {
         {id = 1, name = "Spring", icon = seasonIcons[1], color = seasonColors[1]},
         {id = 2, name = "Summer", icon = seasonIcons[2], color = seasonColors[2]},

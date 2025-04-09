@@ -19,14 +19,17 @@ using Highrise.Lua;
 namespace Highrise.Lua.Generated
 {
     [AddComponentMenu("Lua/ResourceOrigin")]
-    [LuaRegisterType(0xe46743034b71a5aa, typeof(LuaBehaviour))]
+    [LuaRegisterType(0x7ad941e1ff28ac7f, typeof(LuaBehaviour))]
     public class ResourceOrigin : LuaBehaviourThunk
     {
         private const string s_scriptGUID = "b14da0b04d1e59a428097ff6389cef7b";
         public override string ScriptGUID => s_scriptGUID;
 
+        [SerializeField] public System.Double m_uniqueID = 0;
         [LuaScriptPropertyAttribute("f991541301db6dd47b91752d96328df4")]
         [SerializeField] public System.Collections.Generic.List<UnityEngine.Object> m_resources = default;
+        [SerializeField] public System.Double m_renewTime = 0;
+        [SerializeField] public UnityEngine.GameObject m_resourceModel = default;
         [SerializeField] public UnityEngine.GameObject m_itemParticle = default;
 
         protected override SerializedPropertyValue[] SerializeProperties()
@@ -36,8 +39,11 @@ namespace Highrise.Lua.Generated
 
             return new SerializedPropertyValue[]
             {
-                CreateSerializedProperty(_script.GetPropertyAt(0), m_resources),
-                CreateSerializedProperty(_script.GetPropertyAt(1), m_itemParticle),
+                CreateSerializedProperty(_script.GetPropertyAt(0), m_uniqueID),
+                CreateSerializedProperty(_script.GetPropertyAt(1), m_resources),
+                CreateSerializedProperty(_script.GetPropertyAt(2), m_renewTime),
+                CreateSerializedProperty(_script.GetPropertyAt(3), m_resourceModel),
+                CreateSerializedProperty(_script.GetPropertyAt(4), m_itemParticle),
             };
         }
     }

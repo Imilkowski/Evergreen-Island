@@ -7,7 +7,7 @@ local hudUI : HUD_UI = nil
 --!SerializeField
 local inventoryUI : Inventory_UI = nil
 
-function self:Start()
+function self:ClientStart()
     ShowInventory(false)
 end
 
