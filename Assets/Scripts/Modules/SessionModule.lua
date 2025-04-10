@@ -7,6 +7,29 @@ local currentTool = "None"
 
 local currentSeason = nil
 
+local modifyScaleRequestEvent = Event.new("Modify Scale Event Request")
+local modifyScaleEvent = Event.new("Modify Scale Event")
+
+function self:ClientAwake()
+    modifyScaleEvent:Connect(function(player)
+        players = client.players
+
+        for i, p in ipairs(players) do
+            p.character.transform.localScale = Vector3.new(0.8, 0.8, 0.8)
+            p.character.speed = 4
+        end
+    end)
+end
+
+function self:ClientStart()
+    UpdateSeasonTime() 
+    Timer.Every(60, function() 
+        UpdateSeasonTime() 
+    end)
+
+    ModifyScale()
+end
+
 function GetCurrentTool()
     return currentTool
 end
@@ -37,9 +60,14 @@ function UpdateSeasonTime()
     UIManagerModule.UpdateHUD_Season(currentSeason, seasonProgress)
 end
 
-function self:ClientStart()
-    UpdateSeasonTime() 
-    Timer.Every(60, function() 
-        UpdateSeasonTime() 
+function ModifyScale()
+    modifyScaleRequestEvent:FireServer()
+end
+
+-- [Server Side]
+
+function self:ServerAwake()
+    modifyScaleRequestEvent:Connect(function(player)
+        modifyScaleEvent:FireAllClients(player)
     end)
 end
