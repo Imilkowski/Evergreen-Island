@@ -31,7 +31,6 @@ function SetCurrentTool(toolName)
 end
 
 function SelectTool(toolName)
-    print(toolName)
     SessionModule.SetCurrentTool(toolName)
     SetCurrentTool(toolName)
 end

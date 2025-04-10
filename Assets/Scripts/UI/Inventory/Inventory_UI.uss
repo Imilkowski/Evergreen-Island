@@ -151,7 +151,7 @@
     flex-direction: row;
 
     margin: 4px;
-    padding: 4px;
+    padding: 2px;
 
     background-color : var(--primary-text-color);
     border-radius: var(--primary-border-radius);

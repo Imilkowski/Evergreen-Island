@@ -283,11 +283,9 @@ MonoBehaviour:
   m_uniqueID: 0
   m_objectName: Oak Tree
   m_resources:
-  - {fileID: 11400000, guid: b8cbdb79ce0b0fd488c3f187d5ce9230, type: 2}
   - {fileID: 11400000, guid: a84a861def5caba489829f7b9285614c, type: 2}
   - {fileID: 11400000, guid: c3185cd8e86a40943a41fb9a04e6e3bb, type: 2}
   m_renewTime: 30
-  m_resourceModel: {fileID: 1468988591860812027}
   m_itemParticle: {fileID: 2917520051898177611, guid: dd520554f132a7f4fa7e9b830cdf7ed7,
     type: 3}
   references:

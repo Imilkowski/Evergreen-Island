@@ -66,6 +66,8 @@
 .season-icon{
     height: 16px;
     width: 16px;
+
+    margin-left: 4px;
 }
 
 .progress-background{
