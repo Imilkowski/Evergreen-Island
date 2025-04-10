@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3515643629460995473}
   - component: {fileID: 771556972089883010}
   m_Layer: 8
-  m_Name: Grass Resource
+  m_Name: Tulip Resource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3048776924898361796}
+  - {fileID: 8689681815006285778}
   - {fileID: 4774083783799530617}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -92,10 +92,10 @@ MonoBehaviour:
   _uiOutputSettings:
     rid: -2
   m_uniqueID: 0
-  m_objectName: Grass
+  m_objectName: Tulip
   m_resources:
-  - {fileID: 11400000, guid: da6aa26937387a24593528999edc0796, type: 2}
-  m_renewTime: 3
+  - {fileID: 11400000, guid: 12cb0a9de55f72c40acb889db7bfbec9, type: 2}
+  m_renewTime: 10
   m_itemParticle: {fileID: 2917520051898177611, guid: dd520554f132a7f4fa7e9b830cdf7ed7,
     type: 3}
   references:
@@ -209,7 +209,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &7972465243952967942
+--- !u!1001 &1433696844285245679
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -217,79 +217,84 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1141940840019278818}
     m_Modifications:
-    - target: {fileID: 4966499054320054466, guid: 9c29506d6b758c34f90b35facae1764a,
+    - target: {fileID: 6933749649016040839, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
+        type: 3}
+      propertyPath: m_Name
+      value: Farm_Crop_Tulip_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742374117464569661, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.65
       objectReference: {fileID: 0}
-    - target: {fileID: 4966499054320054466, guid: 9c29506d6b758c34f90b35facae1764a,
+    - target: {fileID: 7742374117464569661, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7742374117464569661, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6
+      value: 0.65
       objectReference: {fileID: 0}
-    - target: {fileID: 4966499054320054466, guid: 9c29506d6b758c34f90b35facae1764a,
+    - target: {fileID: 7742374117464569661, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4966499054320054466, guid: 9c29506d6b758c34f90b35facae1764a,
+    - target: {fileID: 7742374117464569661, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 4966499054320054466, guid: 9c29506d6b758c34f90b35facae1764a,
+    - target: {fileID: 7742374117464569661, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4966499054320054466, guid: 9c29506d6b758c34f90b35facae1764a,
+    - target: {fileID: 7742374117464569661, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.92387956
       objectReference: {fileID: 0}
-    - target: {fileID: 4966499054320054466, guid: 9c29506d6b758c34f90b35facae1764a,
+    - target: {fileID: 7742374117464569661, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4966499054320054466, guid: 9c29506d6b758c34f90b35facae1764a,
+    - target: {fileID: 7742374117464569661, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.38268343
       objectReference: {fileID: 0}
-    - target: {fileID: 4966499054320054466, guid: 9c29506d6b758c34f90b35facae1764a,
+    - target: {fileID: 7742374117464569661, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4966499054320054466, guid: 9c29506d6b758c34f90b35facae1764a,
+    - target: {fileID: 7742374117464569661, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4966499054320054466, guid: 9c29506d6b758c34f90b35facae1764a,
+    - target: {fileID: 7742374117464569661, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 45
       objectReference: {fileID: 0}
-    - target: {fileID: 4966499054320054466, guid: 9c29506d6b758c34f90b35facae1764a,
+    - target: {fileID: 7742374117464569661, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739657676241971832, guid: 9c29506d6b758c34f90b35facae1764a,
-        type: 3}
-      propertyPath: m_Name
-      value: Plant_Grass_01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9c29506d6b758c34f90b35facae1764a, type: 3}
---- !u!4 &3048776924898361796 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e, type: 3}
+--- !u!4 &8689681815006285778 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4966499054320054466, guid: 9c29506d6b758c34f90b35facae1764a,
+  m_CorrespondingSourceObject: {fileID: 7742374117464569661, guid: 85a50a3eb3796ac40b4c3f5a02ea2b1e,
     type: 3}
-  m_PrefabInstance: {fileID: 7972465243952967942}
+  m_PrefabInstance: {fileID: 1433696844285245679}
   m_PrefabAsset: {fileID: 0}

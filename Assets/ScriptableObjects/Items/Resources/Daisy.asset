@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 188f2bd9889794d18088c831c67300c1, type: 3}
-  m_Name: Oak Hardwood
+  m_Name: Daisy
   m_EditorClassIdentifier: 
   _script: {fileID: -974389366465450183, guid: a2502b0c324894043a57c8e47cac0014, type: 3}
   _networkId: 2580175477
   _properties: []
-  m_itemName: Oak Hardwood
-  m_itemIcon: {fileID: 2800000, guid: 0a365738d4b274ebaa70d106a9e59037, type: 3}
+  m_itemName: Daisy
+  m_itemIcon: {fileID: 2800000, guid: d12b47a83b4ad4214ae561998eee78ce, type: 3}
   m_itemType: Resource
-  m_seasons: 01010101
-  m_locations: 0101
+  m_seasons: 01010000
+  m_locations: 0001
   references:
     version: 2
     RefIds: []
