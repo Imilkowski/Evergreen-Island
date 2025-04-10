@@ -10,6 +10,8 @@ local uniqueID : number = 0
 
 --!SerializeField
 local objectName : string = ""
+--!SerializeField
+local seasons : { boolean } = {}
 
 --!SerializeField
 local resources : { Resource } = {}
@@ -32,6 +34,13 @@ end
 
 function self:Start()
     Timer.After(1, function()
+        currentSeasonId = SessionModule.GetCurrentSeasonId()
+        for i, s in ipairs(seasons) do
+            if(i == currentSeasonId and not s) then
+                self.gameObject:SetActive(false)
+            end
+        end
+
         if(not tracked) then
             print(self.gameObject.name .. " is not being tracked!")
         end

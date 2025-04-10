@@ -53,7 +53,7 @@ function UpdateSeasonTime()
     local seasonProgress = daysPassedRaw - daysPassed
 
     seasonId = (daysPassed % 4) + 1
-    currentSeason = Database.GetSeason(seasonId)
+    currentSeason = Database.GetSeason(2)
 
     -- print(secondsPassed, daysPassed, seasonProgress, seasonId)
     

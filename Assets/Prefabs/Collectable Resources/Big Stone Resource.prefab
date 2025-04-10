@@ -199,6 +199,7 @@ MonoBehaviour:
     rid: -2
   m_uniqueID: 0
   m_objectName: Big Stone
+  m_seasons: 01010101
   m_resources:
   - {fileID: 11400000, guid: dadc67d86e237bd408cf99d79054124f, type: 2}
   m_renewTime: 10

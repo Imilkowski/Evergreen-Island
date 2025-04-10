@@ -27,6 +27,7 @@ namespace Highrise.Lua.Generated
 
         [SerializeField] public System.Double m_uniqueID = 0;
         [SerializeField] public System.String m_objectName = "";
+        [SerializeField] public System.Collections.Generic.List<System.Boolean> m_seasons = default;
         [LuaScriptPropertyAttribute("f991541301db6dd47b91752d96328df4")]
         [SerializeField] public System.Collections.Generic.List<UnityEngine.Object> m_resources = default;
         [SerializeField] public System.Double m_renewTime = 0;
@@ -41,9 +42,10 @@ namespace Highrise.Lua.Generated
             {
                 CreateSerializedProperty(_script.GetPropertyAt(0), m_uniqueID),
                 CreateSerializedProperty(_script.GetPropertyAt(1), m_objectName),
-                CreateSerializedProperty(_script.GetPropertyAt(2), m_resources),
-                CreateSerializedProperty(_script.GetPropertyAt(3), m_renewTime),
-                CreateSerializedProperty(_script.GetPropertyAt(4), m_itemParticle),
+                CreateSerializedProperty(_script.GetPropertyAt(2), m_seasons),
+                CreateSerializedProperty(_script.GetPropertyAt(3), m_resources),
+                CreateSerializedProperty(_script.GetPropertyAt(4), m_renewTime),
+                CreateSerializedProperty(_script.GetPropertyAt(5), m_itemParticle),
             };
         }
     }
