@@ -22,7 +22,6 @@ function self:ClientAwake()
 
         for i, p in ipairs(players) do
             p.character.transform.localScale = Vector3.new(0.8, 0.8, 0.8)
-            p.character.speed = 4
         end
     end)
 
