@@ -16,7 +16,7 @@ MonoBehaviour:
   _networkId: 2580175477
   _properties: []
   m_itemName: Tulip
-  m_itemIcon: {fileID: 2800000, guid: d12b47a83b4ad4214ae561998eee78ce, type: 3}
+  m_itemIcon: {fileID: 2800000, guid: 58d370458031c8d4b8a27557c170d22a, type: 3}
   m_itemType: Resource
   m_seasons: 01000000
   m_locations: 0001

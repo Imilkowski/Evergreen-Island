@@ -16,7 +16,7 @@ MonoBehaviour:
   _networkId: 2580175477
   _properties: []
   m_itemName: Daisy
-  m_itemIcon: {fileID: 2800000, guid: d12b47a83b4ad4214ae561998eee78ce, type: 3}
+  m_itemIcon: {fileID: 2800000, guid: b192d9e1b2c70d646857e0a09365a953, type: 3}
   m_itemType: Resource
   m_seasons: 01010000
   m_locations: 0001

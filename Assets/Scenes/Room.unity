@@ -1082,6 +1082,7 @@ MonoBehaviour:
   _uiOutput: 0
   _uiOutputSettings:
     rid: -2
+  m_seasonMaterial: {fileID: 2100000, guid: 940b814700ebdf749ae85f03b78694b5, type: 2}
   references:
     version: 2
     RefIds:
@@ -4958,7 +4959,7 @@ Transform:
   m_GameObject: {fileID: 2008864648}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -7,14 +7,17 @@ local currentTool = "None"
 
 local currentSeason = nil
 
-local modifyScaleRequestEvent = Event.new("Modify Scale Event Request")
-local modifyScaleEvent = Event.new("Modify Scale Event")
+--!SerializeField
+local seasonMaterial : Material = nil
+
+local modifyPlayerScaleRequestEvent = Event.new("Modify Player Scale Event Request")
+local modifyPlayerScaleEvent = Event.new("Modify Player Scale Event")
 
 local transferPlayerRequestEvent = Event.new("Transfer Player Event Request")
 local transferPlayerEvent = Event.new("Transfer Player Event")
 
 function self:ClientAwake()
-    modifyScaleEvent:Connect(function(player)
+    modifyPlayerScaleEvent:Connect(function(player)
         players = client.players
 
         for i, p in ipairs(players) do
@@ -33,12 +36,14 @@ function self:ClientAwake()
 end
 
 function self:ClientStart()
+    ModifyPlayerScale()
+
     UpdateSeasonTime() 
     Timer.Every(60, function() 
         UpdateSeasonTime() 
     end)
 
-    ModifyScale()
+    AdaptToSeason()
 end
 
 function GetCurrentTool()
@@ -71,8 +76,25 @@ function UpdateSeasonTime()
     UIManagerModule.UpdateHUD_Season(currentSeason, seasonProgress)
 end
 
-function ModifyScale()
-    modifyScaleRequestEvent:FireServer()
+function AdaptToSeason()
+    if(currentSeason.id == 1) then
+        ChangeSeasonMaterial(0.8, 0)
+    elseif(currentSeason.id == 2) then
+        ChangeSeasonMaterial(1, 0)
+    elseif(currentSeason.id == 3) then
+        ChangeSeasonMaterial(0.4, 0)
+    else
+        ChangeSeasonMaterial(0, 1)
+    end
+end
+
+function ChangeSeasonMaterial(temperature, snow)
+    seasonMaterial:SetFloat("_Temperature", temperature)
+    seasonMaterial:SetFloat("_Snow", snow)
+end
+
+function ModifyPlayerScale()
+    transferPlayerRequestEvent:FireServer()
 end
 
 function TransportPlayer(destination)
@@ -82,8 +104,8 @@ end
 -- [Server Side]
 
 function self:ServerAwake()
-    modifyScaleRequestEvent:Connect(function(player)
-        modifyScaleEvent:FireAllClients(player)
+    transferPlayerRequestEvent:Connect(function(player)
+        modifyPlayerScaleEvent:FireAllClients(player)
     end)
 
     transferPlayerRequestEvent:Connect(function(player, destination)
