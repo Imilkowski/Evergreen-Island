@@ -28,6 +28,8 @@ function self:ClientAwake()
     end)
 
     transferPlayerEvent:Connect(function(player, destination)
+        if(destination == nil) then return end
+
         player.character:Teleport(destination)
 
         if(player == client.localPlayer) then

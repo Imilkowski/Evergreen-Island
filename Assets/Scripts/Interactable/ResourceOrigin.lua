@@ -41,9 +41,9 @@ function self:Start()
             end
         end
 
-        if(not tracked) then
-            print(self.gameObject.name .. " is not being tracked!")
-        end
+        -- if(not tracked) then
+        --     print(self.gameObject.name .. " is not being tracked!")
+        -- end
     end)
 end
 
