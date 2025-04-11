@@ -3,7 +3,9 @@
 local UIManagerModule = require("UIManagerModule")
 
 --!Bind
-local _Inventory_Button: VisualElement = nil
+local _InventoryButton: VisualElement = nil
+--!Bind
+local _TravelButton: VisualElement = nil
 
 --!Bind
 local _SeasonName: UILabel = nil
@@ -20,6 +22,11 @@ function UpdateSeasonInfo(season, seasonProgress)
 end
 
 -- Register a callback for when the button is pressed
-_Inventory_Button:RegisterPressCallback(function()
+_InventoryButton:RegisterPressCallback(function()
     UIManagerModule.ShowInventory()
+end)
+
+-- Register a callback for when the button is pressed
+_TravelButton:RegisterPressCallback(function()
+    UIManagerModule.ShowBus()
 end)

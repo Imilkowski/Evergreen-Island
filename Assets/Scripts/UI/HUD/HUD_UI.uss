@@ -28,10 +28,16 @@
     align-items: center;
     justify-content: flex-start;
 
-    background-image: url("project://database/Assets/Art/Icons/Bag.png");
-
     height: 48px;
     width: 48px;
+}
+
+.inventory-icon{
+    background-image: url("project://database/Assets/Art/Icons/Bag.png");
+}
+
+.travel-icon{
+    background-image: url("project://database/Assets/Art/Icons/Map.png");
 }
 
 .text-normal{

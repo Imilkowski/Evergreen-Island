@@ -367,7 +367,7 @@ Transform:
   m_GameObject: {fileID: 155918923}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -0.1633873, y: 0, z: 0.111629486}
+  m_LocalPosition: {x: 1.0000038, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -656,7 +656,7 @@ PrefabInstance:
     - target: {fileID: 4376683188955072334, guid: b7f1dcfd0efec694397018f5315c236a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.836605
+      value: 4.999996
       objectReference: {fileID: 0}
     - target: {fileID: 4376683188955072334, guid: b7f1dcfd0efec694397018f5315c236a,
         type: 3}
@@ -666,7 +666,7 @@ PrefabInstance:
     - target: {fileID: 4376683188955072334, guid: b7f1dcfd0efec694397018f5315c236a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.111637
+      value: 4.0000076
       objectReference: {fileID: 0}
     - target: {fileID: 4376683188955072334, guid: b7f1dcfd0efec694397018f5315c236a,
         type: 3}
@@ -706,7 +706,7 @@ PrefabInstance:
     - target: {fileID: 4604805512871297760, guid: b7f1dcfd0efec694397018f5315c236a,
         type: 3}
       propertyPath: m_Name
-      value: Bus Returning
+      value: Bus
       objectReference: {fileID: 0}
     - target: {fileID: 6467910656854984288, guid: b7f1dcfd0efec694397018f5315c236a,
         type: 3}
@@ -1083,6 +1083,10 @@ MonoBehaviour:
   _uiOutputSettings:
     rid: -2
   m_seasonMaterial: {fileID: 2100000, guid: 940b814700ebdf749ae85f03b78694b5, type: 2}
+  m_travelPoints:
+  - {fileID: 2318603738952263883}
+  - {fileID: 448356667}
+  - {fileID: 2011366238}
   references:
     version: 2
     RefIds:
@@ -3517,6 +3521,7 @@ MonoBehaviour:
   _uiOutputSettings:
     rid: -2
   m_locations:
+  - Village
   - Sunny Shore
   - Lush Forest
   m_seasonIcons:
@@ -5530,7 +5535,7 @@ PrefabInstance:
     - target: {fileID: 4604805512871297760, guid: b7f1dcfd0efec694397018f5315c236a,
         type: 3}
       propertyPath: m_Name
-      value: Bus Returning
+      value: Bus
       objectReference: {fileID: 0}
     - target: {fileID: 6467910656854984288, guid: b7f1dcfd0efec694397018f5315c236a,
         type: 3}

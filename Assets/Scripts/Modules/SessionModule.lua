@@ -8,7 +8,9 @@ local currentTool = "None"
 local currentSeason = nil
 
 --!SerializeField
-local seasonMaterial : Material = nil
+local seasonMaterial: Material = nil
+--!SerializeField
+local travelPoints : { Transform } = {}
 
 local modifyPlayerScaleRequestEvent = Event.new("Modify Player Scale Event Request")
 local modifyPlayerScaleEvent = Event.new("Modify Player Scale Event")
@@ -96,7 +98,8 @@ function ModifyPlayerScale()
     transferPlayerRequestEvent:FireServer()
 end
 
-function TransportPlayer(destination)
+function TransportPlayer(areaID)
+    destination = travelPoints[areaID].position
     transferPlayerRequestEvent:FireServer(destination)
 end
 

@@ -42,12 +42,12 @@ function ShowInventory()
     end
 end
 
-function ShowBus(busScript)
+function ShowBus()
     show = not busUI.gameObject.activeSelf
 
     busUI.gameObject:SetActive(show)
 
     if(show) then
-        busUI.CreateButtonsList(busScript)
+        busUI.CreateButtonsList()
     end
 end

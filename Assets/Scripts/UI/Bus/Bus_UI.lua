@@ -2,6 +2,7 @@
 
 local UIManagerModule = require("UIManagerModule")
 local Database = require("Database")
+local SessionModule = require("SessionModule")
 
 --!Bind
 local _CloseButton: VisualElement = nil
@@ -19,7 +20,7 @@ function SetTexts()
     _Title:SetPrelocalizedText("Travel")
 end
 
-function CreateButtonsList(busScript: Bus)
+function CreateButtonsList()
     _Buttons:Clear()
 
     local locations = Database.GetLocations()
@@ -40,7 +41,7 @@ function CreateButtonsList(busScript: Bus)
 
         -- Register a callback for when the button is pressed
         _button:RegisterPressCallback(function()
-            busScript.Travel(i)
+            SessionModule.TransportPlayer(i)
             UIManagerModule.ClosePanel(self)
         end)
     end

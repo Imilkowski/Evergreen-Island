@@ -9,7 +9,8 @@
 
   <hr:UILuaView class="h-u-d_-u-i">
     <VisualElement class="left-container">
-      <Image class="hud-button" name="_Inventory_Button"/>
+      <Image class="hud-button inventory-icon" name="_InventoryButton"/>
+      <Image class="hud-button travel-icon" name="_TravelButton"/>
     </VisualElement>
 
     <VisualElement class="top-container" picking-mode="Ignore">
