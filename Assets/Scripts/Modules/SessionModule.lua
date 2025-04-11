@@ -10,6 +10,9 @@ local currentSeason = nil
 local modifyScaleRequestEvent = Event.new("Modify Scale Event Request")
 local modifyScaleEvent = Event.new("Modify Scale Event")
 
+local transferPlayerRequestEvent = Event.new("Transfer Player Event Request")
+local transferPlayerEvent = Event.new("Transfer Player Event")
+
 function self:ClientAwake()
     modifyScaleEvent:Connect(function(player)
         players = client.players
@@ -17,6 +20,14 @@ function self:ClientAwake()
         for i, p in ipairs(players) do
             p.character.transform.localScale = Vector3.new(0.8, 0.8, 0.8)
             p.character.speed = 4
+        end
+    end)
+
+    transferPlayerEvent:Connect(function(player, destination)
+        player.character:Teleport(destination)
+
+        if(player == client.localPlayer) then
+            client.mainCamera:GetComponent(RTSCamera).CenterOn(destination)
         end
     end)
 end
@@ -53,7 +64,7 @@ function UpdateSeasonTime()
     local seasonProgress = daysPassedRaw - daysPassed
 
     seasonId = (daysPassed % 4) + 1
-    currentSeason = Database.GetSeason(2)
+    currentSeason = Database.GetSeason(seasonId)
 
     -- print(secondsPassed, daysPassed, seasonProgress, seasonId)
     
@@ -64,10 +75,18 @@ function ModifyScale()
     modifyScaleRequestEvent:FireServer()
 end
 
+function TransportPlayer(destination)
+    transferPlayerRequestEvent:FireServer(destination)
+end
+
 -- [Server Side]
 
 function self:ServerAwake()
     modifyScaleRequestEvent:Connect(function(player)
         modifyScaleEvent:FireAllClients(player)
+    end)
+
+    transferPlayerRequestEvent:Connect(function(player, destination)
+        transferPlayerEvent:FireAllClients(player, destination)
     end)
 end

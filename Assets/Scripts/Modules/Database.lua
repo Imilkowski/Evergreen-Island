@@ -40,6 +40,10 @@ function GetItem(itemName)
     end
 end
 
+function GetLocations()
+    return locations
+end
+
 function GetLocation(id)
     return locations[id]
 end

@@ -7,7 +7,7 @@
     xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
 >
 
-  <hr:UILuaView class="inventory_-u-i" picking-mode="Ignore">
+  <hr:UILuaView class="bus_-u-i" picking-mode="Ignore">
     <VisualElement class="center-panel-container">
       <VisualElement class="header">
         <hr:UILabel class="text-title" name="_Title"/>
@@ -16,17 +16,13 @@
         </VisualElement>
       </VisualElement>
 
-      <VisualElement class="content">
-      
-        <VisualElement class="inventory-slots" name="_ItemsParent"></VisualElement>
+      <VisualElement class="content" name="_Buttons">
 
-        <VisualElement class="item-info">
-          <hr:UILabel class="text-header" name="_ItemName"/>
-          <hr:UILabel class="text-normal" name="_ItemLocations"/>
-
-          <VisualElement class="seasons" name="_ItemSeasons"></VisualElement>
+        <VisualElement class="travel-button">
+          <Image class="travel-icon"/>
+          <hr:UILabel class="text-header"/>
         </VisualElement>
-
+        
       </VisualElement>
     </VisualElement>
   </hr:UILuaView>

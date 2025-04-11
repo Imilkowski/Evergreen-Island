@@ -106,5 +106,5 @@ end
 
 -- Register a callback for when the button is pressed
 _CloseButton:RegisterPressCallback(function()
-    UIManagerModule.ShowInventory(false)
+    UIManagerModule.ClosePanel(self)
 end)

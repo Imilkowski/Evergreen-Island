@@ -27,10 +27,12 @@ namespace Highrise.Lua.Generated
 
         [LuaScriptPropertyAttribute("3f16941e7d562b545a4b7294e8fcd2ac")]
         [SerializeField] public UnityEngine.Object m_hudUI = default;
-        [LuaScriptPropertyAttribute("803fe9b40a68c9748bb029e30e41ee21")]
-        [SerializeField] public UnityEngine.Object m_inventoryUI = default;
         [LuaScriptPropertyAttribute("1a1f784b3928a874d9c0caa329c1b24d")]
         [SerializeField] public UnityEngine.Object m_objectInfoUI = default;
+        [LuaScriptPropertyAttribute("803fe9b40a68c9748bb029e30e41ee21")]
+        [SerializeField] public UnityEngine.Object m_inventoryUI = default;
+        [LuaScriptPropertyAttribute("69613151a362b8b44b88c9dc230c2a5a")]
+        [SerializeField] public UnityEngine.Object m_busUI = default;
 
         protected override SerializedPropertyValue[] SerializeProperties()
         {
@@ -40,8 +42,9 @@ namespace Highrise.Lua.Generated
             return new SerializedPropertyValue[]
             {
                 CreateSerializedProperty(_script.GetPropertyAt(0), m_hudUI),
-                CreateSerializedProperty(_script.GetPropertyAt(1), m_inventoryUI),
-                CreateSerializedProperty(_script.GetPropertyAt(2), m_objectInfoUI),
+                CreateSerializedProperty(_script.GetPropertyAt(1), m_objectInfoUI),
+                CreateSerializedProperty(_script.GetPropertyAt(2), m_inventoryUI),
+                CreateSerializedProperty(_script.GetPropertyAt(3), m_busUI),
             };
         }
     }
