@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Foliage
+  m_Name: Light Green
   m_Shader: {fileID: -6465566751694194690, guid: c18f6756f0e70ba4fb24c61f95946acc,
     type: 3}
   m_Parent: {fileID: 2100000, guid: 940b814700ebdf749ae85f03b78694b5, type: 2}
@@ -44,5 +44,5 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 0.25882354, g: 0.7921569, b: 0.6039216, a: 1}
+    - _Color: {r: 0.4117647, g: 0.8980392, b: 0.7254902, a: 1}
   m_BuildTextureStacks: []
