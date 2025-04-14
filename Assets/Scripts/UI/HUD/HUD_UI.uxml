@@ -10,11 +10,11 @@
   <hr:UILuaView class="h-u-d_-u-i" picking-mode="Ignore">
     <VisualElement class="left-container">
 
-      <Image class="hud-button inventory-icon" name="_InventoryButton"/>
-
       <Image class="hud-button travel-icon" name="_TravelButton"/>
 
       <Image class="hud-button library-icon" name="_LibraryButton"/>
+
+      <Image class="hud-button inventory-icon" name="_InventoryButton"/>
 
     </VisualElement>
 

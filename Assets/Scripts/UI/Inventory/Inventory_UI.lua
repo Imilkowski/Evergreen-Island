@@ -29,6 +29,18 @@ function SetTexts()
     _ItemLocations:SetPrelocalizedText("Lushful Forest, Sunny Shore")
 end
 
+function CheckIfDiscovered(itemName)
+    discoveredItems = SaveModule.GetDiscoveredItems()
+
+    for i, v in ipairs(discoveredItems) do
+        if(v == itemName) then
+            return true
+        end
+    end
+
+    return false
+end
+
 function UpdateItemsList(items)
     ClearItemDetails();
 
@@ -56,7 +68,14 @@ function UpdateItemsList(items)
 
         -- Register a callback for when the button is pressed
         _itemFrame:RegisterPressCallback(function()
-            SetItemDetails(Database.GetItem(k))
+            discovered = CheckIfDiscovered(k)
+
+            if(discovered) then
+                SetItemDetails(Database.GetItem(k))
+            else
+                ClearItemDetails()
+                _ItemLocations:SetPrelocalizedText("Donate to Museum first");
+            end
         end)
     end
 

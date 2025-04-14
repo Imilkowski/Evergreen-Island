@@ -53,7 +53,7 @@
 .content{
     flex-direction: column;
     
-    height: 100%;
+    height: 60%;
     width: 100%;
 }
 
@@ -128,10 +128,6 @@
 }
 
 .items{
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-
     padding: 4px;
 }
 
@@ -189,4 +185,22 @@
 
     height: 24px;
     width: 24px;
+}
+
+.scroll-bar{
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    width: 8px;
+}
+
+.scroll-bar__thumb{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.scroll-view__content-container{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
