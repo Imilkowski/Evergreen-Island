@@ -61,22 +61,20 @@ function UpdateItemsList(discoveredItems)
 
     _ItemsParent:Clear()
 
-    for i = 1, 100 do
-        for i, v in ipairs(items) do
-            local _itemFrame = VisualElement.new();
-            _itemFrame:AddToClassList("item-frame")
-            _ItemsParent:Add(_itemFrame)
-    
-            local _itemIcon = Image.new();
-            _itemIcon:AddToClassList("item-icon")
-            _itemIcon.image = v.GetIcon();
-            _itemFrame:Add(_itemIcon)
-    
-            -- Register a callback for when the button is pressed
-            _itemFrame:RegisterPressCallback(function()
-                SetItemDetails(v)
-            end)
-        end
+    for i, v in ipairs(items) do
+        local _itemFrame = VisualElement.new();
+        _itemFrame:AddToClassList("item-frame")
+        _ItemsParent:Add(_itemFrame)
+
+        local _itemIcon = Image.new();
+        _itemIcon:AddToClassList("item-icon")
+        _itemIcon.image = v.GetIcon();
+        _itemFrame:Add(_itemIcon)
+
+        -- Register a callback for when the button is pressed
+        _itemFrame:RegisterPressCallback(function()
+            SetItemDetails(v)
+        end)
     end
 end
 

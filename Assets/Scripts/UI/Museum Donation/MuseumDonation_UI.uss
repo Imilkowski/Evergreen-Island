@@ -23,8 +23,8 @@
     --blue-color: rgb(224, 239, 252);
     --blue-border-color:rgb(112, 170, 218);
 
-    --green-color: rgb(224, 239, 252);
-    --green-border-color:rgb(112, 170, 218);
+    --green-color: rgb(237, 255, 229);
+    --green-border-color:rgb(133, 218, 112);
 }
 
 .center-panel-container{

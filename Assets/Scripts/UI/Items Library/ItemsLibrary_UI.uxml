@@ -17,10 +17,9 @@
       </VisualElement>
 
       <VisualElement class="content">
-        <hr:UIScrollView class="items" name="_ItemsParent"></hr:UIScrollView>
-      </VisualElement>
+        <hr:UIScrollView name="_ItemsParent"></hr:UIScrollView>
 
-      <VisualElement class="bottom-containter">
+        <VisualElement class="bottom-containter">
 
           <VisualElement class="item-info">
             <hr:UILabel class="text-header" name="_ItemName"/>
@@ -34,6 +33,7 @@
           </VisualElement>
         
         </VisualElement>
+      </VisualElement>
     </VisualElement>
   </hr:UILuaView>
 
