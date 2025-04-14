@@ -11,7 +11,11 @@ local seasonColors : { Color } = {}
 local seasons = {}
 
 --!SerializeField
-local items : { Item } = {}
+local itemsResources : { Item } = {}
+--!SerializeField
+local itemsFarming : { Item } = {}
+--!SerializeField
+local itemsFishing : { Item } = {}
 
 --!SerializeField
 local toolIcons : { Texture } = {}
@@ -33,10 +37,36 @@ function self:ClientAwake()
 end
 
 function GetItem(itemName)
-    for i, item in ipairs(items) do
+    for i, item in ipairs(itemsResources) do
         if(item.GetName()  == itemName) then 
             return item
         end
+    end
+
+    for i, item in ipairs(itemsFarming) do
+        if(item.GetName()  == itemName) then 
+            return item
+        end
+    end
+
+    for i, item in ipairs(itemsFishing) do
+        if(item.GetName()  == itemName) then 
+            return item
+        end
+    end
+end
+
+function GetItems(type)
+    if(type == "Resources") then
+        return itemsResources
+    end
+
+    if(type == "Farming") then
+        return itemsFarming
+    end
+
+    if(type == "Fishing") then
+        return itemsFishing
     end
 end
 

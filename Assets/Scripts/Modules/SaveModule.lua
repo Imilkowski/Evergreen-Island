@@ -26,6 +26,14 @@ function self:ServerAwake()
                 Axe = 2,
                 Pickaxe = 2,
                 Shovel = 2
+            },
+            discoveredItems = {
+                "Acorn",
+                "Daisy",
+                "Iron",
+                "Stone",
+                "Tree Sap",
+                "Wood"
             }
         }
     end)

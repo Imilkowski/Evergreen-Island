@@ -1,4 +1,4 @@
-.inventory_-u-i {
+.items-library_-u-i {
     position: absolute;
     justify-content: center;
 
@@ -29,11 +29,13 @@
     border-radius: var(--primary-border-radius);
 
     align-self: center;
+    overflow: hidden;
 
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     
+    height: 100%;
     width: 100%;
 }
 
@@ -102,7 +104,30 @@
     width: 16px;
 }
 
-.inventory-slots{
+.tip{
+    background-color: var(--blue-color);
+    border-top-color: var(--blue-border-color);
+    border-width: var(--primary-border-width);
+
+    height: 40px;
+    width: 100%;
+
+    flex-shrink: 0;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-containter{
+    position: absolute;
+    bottom: 0px;
+
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.items{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -111,11 +136,6 @@
 }
 
 .item-frame{
-    background-color: var(--primary-color);
-    border-color: var(--primary-border-color);
-    border-width: var(--primary-border-width);
-    border-radius: var(--primary-border-radius);
-
     align-items: center;
     justify-content: center;
 
@@ -132,6 +152,10 @@
 }
 
 .item-info{
+    background-color: var(--secondary-color);
+    border-top-color: var(--primary-border-color);
+    border-width: var(--primary-border-width);
+
     flex-direction: column;
     justify-content: center;
     align-items: center;

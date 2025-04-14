@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xmlns:hr="Highrise.UI"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
+>
+
+  <hr:UILuaView class="items-library_-u-i">
+    <VisualElement class="center-panel-container">
+      <VisualElement class="header">
+        <hr:UILabel class="text-title" name="_Title"/>
+        <VisualElement class="close-button" name="_CloseButton">
+          <Image class="close-icon"/>
+        </VisualElement>
+      </VisualElement>
+
+      <VisualElement class="content">
+
+        <VisualElement class="items" name="_ItemsParent"></VisualElement>
+
+        <VisualElement class="bottom-containter">
+
+          <VisualElement class="item-info">
+            <hr:UILabel class="text-header" name="_ItemName"/>
+            <hr:UILabel class="text-normal" name="_ItemLocations"/>
+
+            <VisualElement class="seasons" name="_ItemSeasons"></VisualElement>
+          </VisualElement>
+
+          <VisualElement class="tip">
+            <hr:UILabel class="text-header" name="_Tip"/>
+          </VisualElement>
+        
+        </VisualElement>
+
+      </VisualElement>
+    </VisualElement>
+  </hr:UILuaView>
+
+</UXML>

@@ -29,7 +29,11 @@ namespace Highrise.Lua.Generated
         [SerializeField] public System.Collections.Generic.List<UnityEngine.Texture> m_seasonIcons = default;
         [SerializeField] public System.Collections.Generic.List<UnityEngine.Color> m_seasonColors = default;
         [LuaScriptPropertyAttribute("a2502b0c324894043a57c8e47cac0014")]
-        [SerializeField] public System.Collections.Generic.List<UnityEngine.Object> m_items = default;
+        [SerializeField] public System.Collections.Generic.List<UnityEngine.Object> m_itemsResources = default;
+        [LuaScriptPropertyAttribute("a2502b0c324894043a57c8e47cac0014")]
+        [SerializeField] public System.Collections.Generic.List<UnityEngine.Object> m_itemsFarming = default;
+        [LuaScriptPropertyAttribute("a2502b0c324894043a57c8e47cac0014")]
+        [SerializeField] public System.Collections.Generic.List<UnityEngine.Object> m_itemsFishing = default;
         [SerializeField] public System.Collections.Generic.List<UnityEngine.Texture> m_toolIcons = default;
 
         protected override SerializedPropertyValue[] SerializeProperties()
@@ -42,8 +46,10 @@ namespace Highrise.Lua.Generated
                 CreateSerializedProperty(_script.GetPropertyAt(0), m_locations),
                 CreateSerializedProperty(_script.GetPropertyAt(1), m_seasonIcons),
                 CreateSerializedProperty(_script.GetPropertyAt(2), m_seasonColors),
-                CreateSerializedProperty(_script.GetPropertyAt(3), m_items),
-                CreateSerializedProperty(_script.GetPropertyAt(4), m_toolIcons),
+                CreateSerializedProperty(_script.GetPropertyAt(3), m_itemsResources),
+                CreateSerializedProperty(_script.GetPropertyAt(4), m_itemsFarming),
+                CreateSerializedProperty(_script.GetPropertyAt(5), m_itemsFishing),
+                CreateSerializedProperty(_script.GetPropertyAt(6), m_toolIcons),
             };
         }
     }

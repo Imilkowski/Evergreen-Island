@@ -7,6 +7,8 @@ local Database = require("Database")
 --!Bind
 local _Title: UILabel = nil
 --!Bind
+local _Tip: UILabel = nil
+--!Bind
 local _ItemName: UILabel = nil
 --!Bind
 local _ItemLocations: UILabel = nil
@@ -19,51 +21,53 @@ local _ItemsParent: VisualElement = nil
 --!Bind
 local _ItemSeasons: VisualElement = nil
 
+local itemsType = "Resources"
+
 function self:Awake()
     SetTexts()
 end
 
 function SetTexts()
-    _Title:SetPrelocalizedText("Inventory")
-    _ItemName:SetPrelocalizedText("Oak Wood")
-    _ItemLocations:SetPrelocalizedText("Lushful Forest, Sunny Shore")
+    _Title:SetPrelocalizedText("Items Journal")
+    _Tip:SetPrelocalizedText("Visit Museum to donate items")
 end
 
-function UpdateItemsList(items)
-    ClearItemDetails();
+function GetDiscoveredItems(discoveredItems)
+    matchedItems = {}
+
+    items = Database.GetItems(itemsType)
+
+    for i, v in ipairs(items) do
+        for i, dv in ipairs(discoveredItems) do
+            if(v.GetName() == dv) then
+                table.insert(matchedItems, v)
+            end
+        end
+    end
+
+    return matchedItems
+end
+
+function UpdateItemsList(discoveredItems)
+    items = GetDiscoveredItems(discoveredItems)
+    ClearItemDetails()
 
     _ItemsParent:Clear()
 
-    slotsNum = SaveModule.GetInventorySize();
-
-    for k, v in pairs(items) do
+    for i, v in ipairs(items) do
         local _itemFrame = VisualElement.new();
         _itemFrame:AddToClassList("item-frame")
         _ItemsParent:Add(_itemFrame)
 
         local _itemIcon = Image.new();
         _itemIcon:AddToClassList("item-icon")
-        _itemIcon.image = Database.GetItem(k).GetIcon();
+        _itemIcon.image = v.GetIcon();
         _itemFrame:Add(_itemIcon)
-
-        local _countLabel = UILabel.new()
-        _countLabel:AddToClassList("item-count-label")
-        _countLabel:AddToClassList("text-title")
-        _countLabel:SetPrelocalizedText(v)
-        _itemFrame:Add(_countLabel)
-
-        slotsNum -= 1;
 
         -- Register a callback for when the button is pressed
         _itemFrame:RegisterPressCallback(function()
-            SetItemDetails(Database.GetItem(k))
+            SetItemDetails(v)
         end)
-    end
-
-    for i = 1, slotsNum do
-        local _itemFrame = VisualElement.new();
-        _itemFrame:AddToClassList("item-frame")
-        _ItemsParent:Add(_itemFrame)
     end
 end
 

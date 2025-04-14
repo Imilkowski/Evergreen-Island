@@ -11,12 +11,15 @@ local objectInfoUI : ObjectInfo_UI = nil
 local inventoryUI : Inventory_UI = nil
 --!SerializeField
 local busUI : Bus_UI = nil
+--!SerializeField
+local itemsLibraryUI : ItemsLibrary_UI = nil
 
 function self:ClientStart()
     objectInfoUI.gameObject:SetActive(false)
 
     ClosePanel(inventoryUI)
     ClosePanel(busUI)
+    ClosePanel(itemsLibraryUI)
 end
 
 function UpdateHUD_Season(season, seasonProgress)
@@ -49,5 +52,15 @@ function ShowBus()
 
     if(show) then
         busUI.CreateButtonsList()
+    end
+end
+
+function ShowLibrary()
+    show = not itemsLibraryUI.gameObject.activeSelf
+
+    itemsLibraryUI.gameObject:SetActive(show)
+
+    if(show) then
+        itemsLibraryUI.UpdateItemsList(SaveModule.players_storage[client.localPlayer].discoveredItems)
     end
 end
