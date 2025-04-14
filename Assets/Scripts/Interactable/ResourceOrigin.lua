@@ -153,7 +153,7 @@ self.gameObject:GetComponent(TapHandler).Tapped:Connect(function()
     
     for i, item in ipairs(items) do
         if(item.GetSeasons()[seasonId]) then
-            SaveModule.ChangeInventoryItem(true, item.GetName(), itemsCount[i])
+            SaveModule.ChangeInventoryItem(item.GetName(), itemsCount[i])
 
             SpawnItemParticle(item.GetIcon())
             client.localPlayer.character:PlayEmote("mining-success", false)

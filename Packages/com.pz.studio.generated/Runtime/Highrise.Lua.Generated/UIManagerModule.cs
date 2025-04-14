@@ -35,6 +35,8 @@ namespace Highrise.Lua.Generated
         [SerializeField] public UnityEngine.Object m_busUI = default;
         [LuaScriptPropertyAttribute("1c80658b4281d004cb382d0c410a2684")]
         [SerializeField] public UnityEngine.Object m_itemsLibraryUI = default;
+        [LuaScriptPropertyAttribute("da1c5babc6fa43b488da2af2a938e01f")]
+        [SerializeField] public UnityEngine.Object m_museumDonationUI = default;
 
         protected override SerializedPropertyValue[] SerializeProperties()
         {
@@ -48,6 +50,7 @@ namespace Highrise.Lua.Generated
                 CreateSerializedProperty(_script.GetPropertyAt(2), m_inventoryUI),
                 CreateSerializedProperty(_script.GetPropertyAt(3), m_busUI),
                 CreateSerializedProperty(_script.GetPropertyAt(4), m_itemsLibraryUI),
+                CreateSerializedProperty(_script.GetPropertyAt(5), m_museumDonationUI),
             };
         }
     }

@@ -12,6 +12,9 @@ local getPlayerStorageResponse = Event.new("Get Player Storage Response")
 local changeInventoryItem = Event.new("Change Inventory Item")
 local changeInventoryResponse = Event.new("Change Inventory Response")
 
+local addDiscoveredItem = Event.new("Add Discovered Item")
+local addDiscoveredItemResponse = Event.new("Add Discovered Item Response")
+
 players_storage = {}
 
 -- [Server Side]
@@ -49,7 +52,7 @@ function self:ServerAwake()
     end)
 
     --Player Inventory Change
-    changeInventoryItem:Connect(function(player: Player, add:boolean, itemName, amount)
+    changeInventoryItem:Connect(function(player: Player, itemName, amount)
         slotsOccupied = CountDictonaryItems(players_storage[player].inventory)
 
         if(players_storage[player].inventory[itemName] == nil) then
@@ -57,14 +60,17 @@ function self:ServerAwake()
 
             players_storage[player].inventory[itemName] = amount
         else
-            if(not add) then
-                amount *= -1
-            end
-
             players_storage[player].inventory[itemName] += amount
         end
 
         changeInventoryResponse:FireClient(player, players_storage[player].inventory)
+    end)
+
+    --Player Donated Item
+    addDiscoveredItem:Connect(function(player: Player, itemName)
+        table.insert(players_storage[player].discoveredItems, itemName)
+
+        addDiscoveredItemResponse:FireClient(player, players_storage[player].discoveredItems)
     end)
 end
 
@@ -83,12 +89,17 @@ end
 function self:ClientAwake()
     trackPlayer:FireServer(client.localPlayer)
 
-    --Get Player Storage Response
+    --Change Inventory Response
     changeInventoryResponse:Connect(function(inventory)
         players_storage[client.localPlayer].inventory = inventory;
     end)
 
-    --Change Inventory Response
+    --Add Discovered Item Response
+    addDiscoveredItemResponse:Connect(function(discoveredItems)
+        players_storage[client.localPlayer].discoveredItems = discoveredItems;
+    end)
+
+    --Get Player Storage Response
     getPlayerStorageResponse:Connect(function(storage)
         players_storage[client.localPlayer] = storage;
         print("Player storage received")
@@ -99,8 +110,31 @@ function self:ClientStart()
     getPlayerStorage:FireServer(client.localPlayer)
 end
 
-function ChangeInventoryItem(add, itemName, amount)
-    changeInventoryItem:FireServer(add, itemName, amount)
+function Local_ChangeInventoryItem(itemName, amount)
+    if(players_storage[client.localPlayer].inventory[itemName] == nil) then
+        slotsOccupied = CountDictonaryItems(players_storage[client.localPlayer].inventory)
+        if(slotsOccupied >= inventorySize) then return end
+
+        players_storage[client.localPlayer].inventory[itemName] = amount
+    else
+        players_storage[client.localPlayer].inventory[itemName] += amount
+    end
+end
+
+function Local_AddDiscoveredItem(itemName)
+    table.insert(players_storage[client.localPlayer].discoveredItems, itemName)
+end
+
+function ChangeInventoryItem(itemName, amount)
+    changeInventoryItem:FireServer(itemName, amount)
+
+    Local_ChangeInventoryItem(itemName, amount)
+end
+
+function AddDiscoveredItem(itemName)
+    addDiscoveredItem:FireServer(itemName)
+
+    Local_AddDiscoveredItem(itemName)
 end
 
 function GetInventorySize()
@@ -109,4 +143,8 @@ end
 
 function GetTools()
     return players_storage[client.localPlayer].tools;
+end
+
+function GetDiscoveredItems()
+    return players_storage[client.localPlayer].discoveredItems;
 end

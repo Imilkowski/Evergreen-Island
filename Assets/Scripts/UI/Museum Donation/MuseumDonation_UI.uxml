@@ -7,7 +7,7 @@
     xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
 >
 
-  <hr:UILuaView class="inventory_-u-i">
+  <hr:UILuaView class="museum-donation_-u-i">
     <VisualElement class="center-panel-container">
       <VisualElement class="header">
         <hr:UILabel class="text-title" name="_Title"/>
@@ -21,10 +21,10 @@
         <VisualElement class="inventory-slots" name="_ItemsParent"></VisualElement>
 
         <VisualElement class="item-info">
-          <hr:UILabel class="text-header" name="_ItemName"/>
-          <hr:UILabel class="text-normal" name="_ItemLocations"/>
-
-          <VisualElement class="seasons" name="_ItemSeasons"></VisualElement>
+          <VisualElement class="donate-button inactive-button" name="_DonateButton">
+            <Image class="donate-icon"/>
+            <hr:UILabel class="text-header" name="_DonateLabel"/>
+          </VisualElement>
         </VisualElement>
 
       </VisualElement>
