@@ -32,16 +32,23 @@ function SetTexts()
     _Tip:SetPrelocalizedText("Visit Museum to donate items")
 end
 
+function GetMatch(databaseItem:string, discoveredItems)
+    for i, dv in ipairs(discoveredItems) do
+        if(databaseItem == dv) then
+            return true
+        end
+    end
+end
+
 function GetDiscoveredItems(discoveredItems)
     matchedItems = {}
 
     items = Database.GetItems(itemsType)
 
     for i, v in ipairs(items) do
-        for i, dv in ipairs(discoveredItems) do
-            if(v.GetName() == dv) then
-                table.insert(matchedItems, v)
-            end
+        matched = GetMatch(v.GetName(), discoveredItems)
+        if(matched) then
+            table.insert(matchedItems, v)
         end
     end
 
