@@ -16,6 +16,12 @@
         </VisualElement>
       </VisualElement>
 
+      <VisualElement class="categories">
+        <VisualElement class="category-button active-button" name="_ResourcesButton">
+          <Image class="resources-icon"/>
+        </VisualElement>
+      </VisualElement>
+
       <VisualElement class="content">
         <hr:UIScrollView name="_ItemsParent"></hr:UIScrollView>
 

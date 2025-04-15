@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xmlns:hr="Highrise.UI"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
+>
+
+  <hr:UILuaView class="quests_-u-i">
+    <VisualElement class="center-panel-container">
+      <VisualElement class="header">
+        <hr:UILabel class="text-title" name="_Title"/>
+        <VisualElement class="close-button" name="_CloseButton">
+          <Image class="close-icon"/>
+        </VisualElement>
+      </VisualElement>
+
+      <VisualElement class="progress-container">
+        <VisualElement class="progress">
+          <VisualElement class="level">
+            <hr:UILabel class="text-title" name="_Level"/>
+          </VisualElement>
+
+          <VisualElement class="experience">
+            <Image class="exp-icon"/>
+            <hr:UILabel class="text-header-leveled" name="_Experience"/>
+          </VisualElement>
+
+          <VisualElement class="progress-background">
+            <VisualElement class="progress-foreground" name="_ProgressBar"></VisualElement>
+          </VisualElement>
+        </VisualElement>
+
+        <VisualElement class="collect-rewards-button" name="_CollectRewardsButton">
+          <hr:UILabel class="text-header-leveled collect-rewards" name="_CollectRewards"/>
+
+          <VisualElement class="gems-container">
+            <hr:UILabel class="text-header" name="_RewardsValue"/>
+            <Image class="gem-icon"/>
+          </VisualElement>
+        </VisualElement>
+      </VisualElement>
+
+      <VisualElement class="categories">
+        <VisualElement class="category-button active-button" name="_ResourcesButton">
+          <Image class="resources-icon"/>
+        </VisualElement>
+      </VisualElement>
+
+      <VisualElement class="content">
+        <VisualElement class="quest-container">
+        
+        </VisualElement>
+      </VisualElement>
+    </VisualElement>
+  </hr:UILuaView>
+
+</UXML>

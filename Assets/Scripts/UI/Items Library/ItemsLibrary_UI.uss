@@ -14,12 +14,17 @@
     --primary-border-width: 2px;
     --primary-border-radius: 20px;
 
+    --primary-text-color: rgb(64, 64, 64);
+
     --secondary-color: rgb(232, 235, 237);
+
+    --gray-color: rgb(197, 200, 202);
 
     --blue-color: rgb(224, 239, 252);
     --blue-border-color:rgb(112, 170, 218);
 
-    --primary-text-color: rgb(64, 64, 64);
+    --green-color: rgb(237, 255, 229);
+    --green-border-color:rgb(133, 218, 112);
 }
 
 .center-panel-container{
@@ -201,4 +206,44 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.categories{
+    flex-direction: row;
+    
+    height: 48px;
+    width: 100%;
+
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.category-button{
+    border-width: var(--primary-border-width);
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin: -1px;
+
+    height: 48px;
+    flex-grow: 1;
+}
+
+.resources-icon{
+    background-image: url("project://database/Assets/Art/Icons/Tree.png");
+
+    height: 28px;
+    width: 28px;
+}
+
+.inactive-button{
+    background-color: var(--gray-color);
+    border-color: var(--primary-border-color);
+}
+
+.active-button{
+    background-color: var(--primary-color);
+    border-color: var(--primary-border-color);
 }
