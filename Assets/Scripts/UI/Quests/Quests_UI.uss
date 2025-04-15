@@ -315,20 +315,16 @@
 }
 
 .quest-header{
-    background-color: var(--yellow-color);
-
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
 
     width: 100%;
 
-    padding: 8px;
+    padding: 12px;
 }
 
 .quest-details{
-    background-color: var(--green-color);
-
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
@@ -336,15 +332,17 @@
 
     width: 100%;
 
-    padding: 8px;
+    padding: 12px;
 }
 
 .quest-description{
-    background-color: var(--blue-color);
-
     width: 100%;
 
-    padding: 8px;
+    padding: 16px;
+
+    overflow: hidden;
+    white-space: normal;
+    -unity-text-overflow-position: end;
 }
 
 .item-frame{

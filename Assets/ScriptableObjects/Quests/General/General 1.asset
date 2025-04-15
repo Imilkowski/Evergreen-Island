@@ -16,7 +16,8 @@ MonoBehaviour:
   _networkId: 3961201771
   _properties: []
   m_expReward: 100
-  m_description: I need grass for a science project or something.
+  m_description: I need grass for a science project or something. Whatever, need
+    to make this description longer.
   m_itemsRequired:
   - {fileID: 11400000, guid: ccda31d039e6a8f428d09852ef3c6d4a, type: 2}
   m_itemsCount:
