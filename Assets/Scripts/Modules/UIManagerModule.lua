@@ -15,6 +15,8 @@ local busUI : Bus_UI = nil
 local itemsLibraryUI : ItemsLibrary_UI = nil
 --!SerializeField
 local museumDonationUI : MuseumDonation_UI = nil
+--!SerializeField
+local questsUI : Quests_UI = nil
 
 function self:ClientStart()
     objectInfoUI.gameObject:SetActive(false)
@@ -23,6 +25,7 @@ function self:ClientStart()
     ClosePanel(busUI)
     ClosePanel(itemsLibraryUI)
     ClosePanel(museumDonationUI)
+    ClosePanel(questsUI)
 end
 
 function UpdateHUD_Season(season, seasonProgress)
@@ -72,5 +75,10 @@ function Show_NPC_Panel(triggerType)
     if(triggerType == "Museum") then
         museumDonationUI.gameObject:SetActive(true)
         museumDonationUI.UpdateItemsList(SaveModule.players_storage[client.localPlayer].inventory)
+    end
+
+    if(triggerType == "Quests") then
+        questsUI.gameObject:SetActive(true)
+        questsUI.UpdateQuestInfo(SaveModule.players_storage[client.localPlayer].generalInfo)
     end
 end

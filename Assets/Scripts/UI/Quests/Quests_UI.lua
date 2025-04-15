@@ -2,7 +2,7 @@
 
 local UIManagerModule = require("UIManagerModule")
 local SaveModule = require("SaveModule")
-local Database = require("Database")
+local QuestsManagerModule = require("QuestsManagerModule")
 
 --!Bind
 local _Title: UILabel = nil
@@ -17,6 +17,8 @@ local _Experience: UILabel = nil
 
 --!Bind
 local _ProgressBar: VisualElement = nil
+--!Bind
+local _QuestContent: VisualElement = nil
 
 --!Bind
 local _CloseButton: VisualElement = nil
@@ -33,6 +35,13 @@ function SetTexts()
     _RewardsValue:SetPrelocalizedText("250")
     _Level:SetPrelocalizedText("12")
     _Experience:SetPrelocalizedText("300/400")
+end
+
+function UpdateQuestInfo(generalInfo)
+    quest = QuestsManagerModule.GetQuest(questsType)
+    print(quest.GetDescription())
+
+    --_QuestContent:Clear()
 end
 
 -- Register a callback for when the button is pressed

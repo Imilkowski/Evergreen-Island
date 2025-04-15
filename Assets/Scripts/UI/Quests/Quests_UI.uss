@@ -63,6 +63,8 @@
     
     height: 100%;
     width: 100%;
+
+    padding: 8px;
 }
 
 .text-title{
@@ -213,7 +215,7 @@
 
 .progress{
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
 
     height: 40px;
@@ -234,6 +236,8 @@
 
     height: 32px;
     width: 32px;
+
+    flex-shrink: 0;
 }
 
 .experience{
@@ -260,9 +264,9 @@
 
     align-self: center;
 
-    margin-left: 8px;
+    margin-left: 4px;
 
-    width: 200px;
+    width: 150px;
     height: 16px;
 
     flex-shrink: 0;
@@ -277,4 +281,93 @@
     margin: -2px;
     
     height: 200%;
+}
+
+.experience-right{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+
+    position: absolute;
+    right: 8px;
+}
+
+.quest-icon{
+    background-image: url("project://database/Assets/Art/Icons/Badge.png");
+
+    height: 24px;
+    width: 24px;
+}
+
+.quest-container{
+    background-color: var(--primary-color);
+    border-color: var(--primary-border-color);
+    border-width: var(--primary-border-width);
+    border-radius: var(--primary-border-radius);
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+
+    width: 100%;
+}
+
+.quest-header{
+    background-color: var(--yellow-color);
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+
+    padding: 8px;
+}
+
+.quest-details{
+    background-color: var(--green-color);
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+
+    padding: 8px;
+}
+
+.quest-description{
+    background-color: var(--blue-color);
+
+    width: 100%;
+
+    padding: 8px;
+}
+
+.item-frame{
+    align-items: center;
+    justify-content: center;
+
+    margin: 2px;
+    flex-shrink: 0;
+
+    height: 64px;
+    width: 64px;
+}
+
+.item-icon{
+    height: 48px;
+    width: 48px;
+}
+
+.item-count-label{
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+
+    color: white;
+    -unity-text-outline: 1px, black;
 }

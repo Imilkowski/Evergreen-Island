@@ -34,7 +34,10 @@ function self:ServerAwake()
             player = player,
             generalInfo = {
                 Coins = 0,
-                Gems = 0
+                Gems = 0,
+                Level = 0,
+                Experience = 0,
+                Quests_General = 0
             },
             tools = {
                 Axe = 2,
@@ -159,6 +162,8 @@ function self:ClientStart()
     end)
 end
 
+-- Local
+
 function Local_ChangeInventoryItem(itemName, amount)
     if(players_storage[client.localPlayer].inventory[itemName] == nil) then
         slotsOccupied = CountDictonaryItems(players_storage[client.localPlayer].inventory)
@@ -178,6 +183,8 @@ function Local_AddDiscoveredItem(itemName)
     table.insert(players_storage[client.localPlayer].discoveredItems, itemName)
 end
 
+-- Set Values
+
 function ChangeInventoryItem(itemName, amount)
     changeInventoryItem:FireServer(itemName, amount)
 
@@ -190,6 +197,8 @@ function AddDiscoveredItem(itemName)
     Local_AddDiscoveredItem(itemName)
 end
 
+-- Get Values
+
 function GetInventorySize()
     return inventorySize;
 end
@@ -200,4 +209,8 @@ end
 
 function GetDiscoveredItems()
     return players_storage[client.localPlayer].discoveredItems;
+end
+
+function GetGeneralInfo()
+    return players_storage[client.localPlayer].generalInfo;
 end

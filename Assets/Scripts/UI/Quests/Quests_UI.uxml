@@ -48,9 +48,35 @@
         </VisualElement>
       </VisualElement>
 
-      <VisualElement class="content">
+      <VisualElement class="content" name="_QuestContent">
         <VisualElement class="quest-container">
-        
+
+          <VisualElement class="quest-header">
+            <Image class="quest-icon"/>
+
+            <hr:UILabel class="text-title"/>
+
+            <VisualElement class="experience-right">
+              <Image class="exp-icon"/>
+              <hr:UILabel class="text-header-leveled"/>
+            </VisualElement>
+          </VisualElement>
+
+          <VisualElement class="quest-details">
+            <hr:UILabel class="text-header"/>
+
+            <VisualElement class="item-frame">
+              <Image class="item-icon"/>
+              <hr:UILabel class="text-title item-count-label"/>
+            </VisualElement>
+          </VisualElement>
+
+          <VisualElement class="quest-details">
+            <hr:UILabel class="text-header"/>
+          </VisualElement>
+
+          <hr:UILabel class="text-normal quest-description"/>
+
         </VisualElement>
       </VisualElement>
     </VisualElement>
