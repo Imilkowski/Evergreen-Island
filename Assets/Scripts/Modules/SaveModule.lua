@@ -1,19 +1,27 @@
 --!Type(Module)
 
+local CloudSaveModule = require("CloudSaveModule")
+
+--!SerializeField
+local saveToCloudInterval : number = 0;
+
 --!SerializeField
 local inventorySize : number = 0;
 
 local trackPlayer = Event.new("Track Player")
 
---Inventory
-local getPlayerStorage = Event.new("Get Player Storage")
-local getPlayerStorageResponse = Event.new("Get Player Storage Response")
+local savePlayerDataToCloud = Event.new("Save Player Data To Cloud")
+local loadPlayerDataFromCloud = Event.new("Load Player Data From Cloud")
+
+local playerStorageLoadedResponse = Event.new("Player Storage Loaded Response")
 
 local changeInventoryItem = Event.new("Change Inventory Item")
 local changeInventoryResponse = Event.new("Change Inventory Response")
 
 local addDiscoveredItem = Event.new("Add Discovered Item")
 local addDiscoveredItemResponse = Event.new("Add Discovered Item Response")
+
+local dataLoaded = false
 
 players_storage = {}
 
@@ -24,24 +32,38 @@ function self:ServerAwake()
     trackPlayer:Connect(function(player: Player)
         players_storage[player] = {
             player = player,
-            inventory = {},
+            generalInfo = {
+                Coins = 0,
+                Gems = 0
+            },
             tools = {
                 Axe = 2,
                 Pickaxe = 2,
                 Shovel = 2
             },
+            inventory = {},
             discoveredItems = {}
         }
     end)
 
     --Untrack Player
     game.PlayerDisconnected:Connect(function(player)
+        CloudSaveModule.SavePlayerDataToCloud(player, players_storage[player])
         players_storage[player] = nil
     end)
 
-    --Track Player
-    getPlayerStorage:Connect(function(player: Player)
-        getPlayerStorageResponse:FireClient(player, players_storage[player])
+    --Save Player Data To Cloud
+    savePlayerDataToCloud:Connect(function(player: Player)
+        CloudSaveModule.SavePlayerDataToCloud(player, players_storage[player])
+    end)
+
+    --Load Player Data From Cloud
+    loadPlayerDataFromCloud:Connect(function(player: Player)
+        CloudSaveModule.LoadPlayerDataFromCloud(player)
+
+        Timer.After(1, function()
+            playerStorageLoadedResponse:FireClient(player, players_storage[player])
+        end)
     end)
 
     --Player Inventory Change
@@ -54,6 +76,10 @@ function self:ServerAwake()
             players_storage[player].inventory[itemName] = amount
         else
             players_storage[player].inventory[itemName] += amount
+
+            if(players_storage[player].inventory[itemName] <= 0) then
+                players_storage[player].inventory[itemName] = nil
+            end
         end
 
         changeInventoryResponse:FireClient(player, players_storage[player].inventory)
@@ -65,6 +91,28 @@ function self:ServerAwake()
 
         addDiscoveredItemResponse:FireClient(player, players_storage[player].discoveredItems)
     end)
+end
+
+function LoadData(player, dataType, data)
+    if(data == nil) then
+        return
+    end
+
+    if(dataType == "GeneralInfo") then
+        players_storage[player].generalInfo = data
+    end
+
+    if(dataType == "Inventory") then
+        players_storage[player].inventory = data
+    end
+
+    if(dataType == "Tools") then
+        players_storage[player].tools = data
+    end
+
+    if(dataType == "DiscoveredItems") then
+        players_storage[player].discoveredItems = data
+    end
 end
 
 function CountDictonaryItems(t)
@@ -92,15 +140,23 @@ function self:ClientAwake()
         players_storage[client.localPlayer].discoveredItems = discoveredItems;
     end)
 
-    --Get Player Storage Response
-    getPlayerStorageResponse:Connect(function(storage)
+    --Player Storage Loaded Response
+    playerStorageLoadedResponse:Connect(function(storage)
         players_storage[client.localPlayer] = storage;
-        print("Player storage received")
+
+        dataLoaded = true
+        print("Player storage loaded")
     end)
 end
 
 function self:ClientStart()
-    getPlayerStorage:FireServer(client.localPlayer)
+    loadPlayerDataFromCloud:FireServer(client.localPlayer)
+
+    Timer.Every(saveToCloudInterval, function()
+        if (dataLoaded) then
+            savePlayerDataToCloud:FireServer(client.localPlayer)
+        end
+    end)
 end
 
 function Local_ChangeInventoryItem(itemName, amount)
@@ -111,6 +167,10 @@ function Local_ChangeInventoryItem(itemName, amount)
         players_storage[client.localPlayer].inventory[itemName] = amount
     else
         players_storage[client.localPlayer].inventory[itemName] += amount
+
+            if(players_storage[client.localPlayer].inventory[itemName] <= 0) then
+                players_storage[client.localPlayer].inventory[itemName] = nil
+            end
     end
 end
 

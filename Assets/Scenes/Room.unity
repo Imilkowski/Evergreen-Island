@@ -1851,6 +1851,7 @@ GameObject:
   - component: {fileID: 533293880}
   - component: {fileID: 533293882}
   - component: {fileID: 533293881}
+  - component: {fileID: 533293883}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1893,6 +1894,7 @@ MonoBehaviour:
   _uiOutput: 0
   _uiOutputSettings:
     rid: -2
+  m_saveToCloudInterval: 10
   m_inventorySize: 10
   references:
     version: 2
@@ -1922,6 +1924,29 @@ MonoBehaviour:
   - {fileID: 2318603738952263883}
   - {fileID: 448356667}
   - {fileID: 2011366238}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &533293883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533293879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c96f9e99bc27741320914c3abe21167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _networkId: 0
+  _script: {fileID: -974389366465450183, guid: a649f93c211d779488d61416113d11b2, type: 3}
+  _properties: []
+  _uiOutput: 0
+  _uiOutputSettings:
+    rid: -2
   references:
     version: 2
     RefIds:

@@ -46,10 +46,10 @@ Material:
     - _QueueOffset: 0
     - _Saturation: 1
     - _Season: 1
-    - _Snow: 1
+    - _Snow: 0
     - _SnowEdge: 1
     - _SnowHeight: 4
-    - _Temperature: 0
+    - _Temperature: 0.8
     - _Winter: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

@@ -18,15 +18,13 @@ using Highrise.Lua;
 
 namespace Highrise.Lua.Generated
 {
-    [AddComponentMenu("Lua/SaveModule")]
-    [LuaRegisterType(0x8f5d59af62e39260, typeof(LuaBehaviour))]
-    public class SaveModule : LuaBehaviourThunk
+    [AddComponentMenu("Lua/CloudSaveModule")]
+    [LuaRegisterType(0x1d51c72e21e265d7, typeof(LuaBehaviour))]
+    public class CloudSaveModule : LuaBehaviourThunk
     {
-        private const string s_scriptGUID = "f3d16a2d5617bee409c749ae3cc9d147";
+        private const string s_scriptGUID = "a649f93c211d779488d61416113d11b2";
         public override string ScriptGUID => s_scriptGUID;
 
-        [SerializeField] public System.Double m_saveToCloudInterval = 0;
-        [SerializeField] public System.Double m_inventorySize = 0;
 
         protected override SerializedPropertyValue[] SerializeProperties()
         {
@@ -35,8 +33,6 @@ namespace Highrise.Lua.Generated
 
             return new SerializedPropertyValue[]
             {
-                CreateSerializedProperty(_script.GetPropertyAt(0), m_saveToCloudInterval),
-                CreateSerializedProperty(_script.GetPropertyAt(1), m_inventorySize),
             };
         }
     }
